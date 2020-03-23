@@ -10,9 +10,11 @@ import {
 import AllRecipes from "./AllRecipes";
 import NewRecipe from "./NewRecipe";
 import ShoppingList from "./ShoppingList";
+import Search from "./Search";
 
 function App() {
   return (
+      <div>
       <Router>
         <div>
           <nav>
@@ -44,6 +46,7 @@ function App() {
           </Switch>
         </div>
       </Router>
+      </div>
   );
 }
 
