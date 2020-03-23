@@ -5,9 +5,9 @@ class AllRecipes extends Component {
     render() {
         return (
             <div>
-                <Search className="Searchbar" />
                 <h1>Tässä on etusivukomponentti, joka näyttää kaikki reseptit</h1>
-                <p>Tänne ne tulee</p>
+                <Search />
+                <p>Tänne ne reseptit tulee</p>
             </div>
         );
     }
