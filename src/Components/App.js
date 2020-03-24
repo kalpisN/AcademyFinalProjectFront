@@ -7,7 +7,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import AllRecipes from "./AllRecipes";
+import Search from "./Search";
 import NewRecipe from "./NewRecipe";
 import ShoppingList from "./ShoppingList";
 
@@ -32,7 +32,7 @@ function App() {
                             <ShoppingList/>
                         </Route>
                         <Route path="/">
-                            <AllRecipes/>
+                            <Search/>
                         </Route>
                     </Switch>
                 </div>
