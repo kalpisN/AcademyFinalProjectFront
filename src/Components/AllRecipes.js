@@ -4,14 +4,17 @@ import Recipe from "./Recipe";
 
 function AllRecipes(props) {
     console.log(props.recipes)
-    const filtered = props.recipes.results.filter(recipe => recipe.title.toUpperCase().includes(props.filter.trim().toUpperCase()))
-
+   const filtered = props.recipes.body.filter(recipe =>
+        recipe.name.toUpperCase().includes(props.filter.trim().toUpperCase()))
+console.log('here are filtered recipes:' , filtered)
 
     const rows = filtered.map(recipe =>
         <div key={recipe.id}>
             <Recipe image={recipe.image}
-                    title={recipe.title}
+                    name={recipe.name}
                     id={recipe.id}
+                    cooking_time={recipe.cooking_time}
+                    instruction={recipe.instruction}
             />
         </div>
     )

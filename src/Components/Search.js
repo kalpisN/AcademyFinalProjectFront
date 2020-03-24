@@ -10,7 +10,7 @@ function Search() {
 
 
     useEffect(() => {
-        const url = ''
+        const url = 'https://v0ey9ci8fb.execute-api.eu-west-1.amazonaws.com/dev/api/allrecipes'
         console.log('effect')
         axios
             .get(url)
@@ -22,57 +22,25 @@ function Search() {
             })
     }, [])
 
-    /*fetchSearchResults = (query) => {
-        if (this.cancel) {
-            // Cancel the previous request before making a new request
-            this.cancel.cancel();
-        }
-        // Create a new CancelToken
-        this.cancel = axios.CancelToken.source();
-*/
-    /*  const url = ""
-      axios
-          .get(url, {cancelToken: this.cancel.token})
-          .then((res) => {
-              /!*const resultNotFoundMsg = !res.data.hits.length
-                  ? 'There are no more search results. Please try a new search.'
-                  : '';  *!/
-              this.setState({
-                  results: res.data.hits,
-                  message: resultNotFoundMsg,
-                  loading: false,
-              });
-          })
-          .catch((error) => {
-              if (axios.isCancel(error) || error) {
-                  this.setState({
-                      loading: false,
-                      message: 'Failed to fetch results.Please check network',
-                  });
-              }
-          });
-  };*/
-
-    /*handleInputChange = (event) => {
-        this.setState({userInput: event.target.value});
-    };
-*/
     console.log('render', recipes.length, 'recipes')
-    console.log(recipes)
+    console.log(' here are the recipes props:' , recipes)
 
 
-    return (
-        <div className={"Searchbar"}>
-            <p>Tämä on hakukenttäkomponentti</p>
-            <label className={"liveSearchForm"}>
-                <input type="text" placeholder={"Kirjoita reseptin nimi tähän..."} value={filter}
-                       onChange={handlefilterChange}/>
-            </label>
-            <hr/>
-            <div><AllRecipes recipes={recipes} filter={filter} setFilter={setFilter}/></div>
-        </div>
-    );
+    if(recipes.length===0){
+        return 'loading...'
+    }else {
+        return (
+            <div>
+                <div className='heading'>Hae reseptiä</div>
+                <div className='searchBar'>
+                    <input className='searchInput' placeholder='Kirjoita reseptin nimi...' value={filter} onChange={handlefilterChange}/>
+                </div>
+                <hr/>
+                <div><AllRecipes recipes={recipes} filter={filter} setFilter={setFilter}/></div>
+            </div>
+        )
+
+    }
 }
-
 
 export default Search;
