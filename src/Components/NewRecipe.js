@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class NewRecipe extends Component {
     constructor(props) {
@@ -44,33 +45,80 @@ class NewRecipe extends Component {
         this.setState({image: event.target.value});
     }
 
-    handleSubmit(event){
+    async handleSubmit(event) {
+       /* event.preventDefault();
         console.log("starting to post")
         const url = "https://v0ey9ci8fb.execute-api.eu-west-1.amazonaws.com/dev/api"
-        console.log(JSON.stringify({name: this.state.name, cooking_time: this.state.cooking_time, portions: this.state.portions, link: this.state.link,
-        instruction: this.state.instruction, image: this.state.image}))
-        fetch(url,{
-            method:"POST",
-            headers: { "Content-Type": "application/json"},
-            body: JSON.stringify({name: this.state.name, cooking_time: this.state.cooking_time, portions: this.state.portions, link: this.state.link,
-                instruction: this.state.instruction, image: this.state.image})})
-            .then((response) => { // EI TOIMI?!
-                if (response.status === 200) {
-                    console.log("added to database successfully");
-                } else {
-                    console.log("not succuessfull!");
-                }
-            });
-        console.log("post complete")
+        console.log(JSON.stringify({
+            name: this.state.name,
+            cooking_time: this.state.cooking_time,
+            portions: this.state.portions,
+            link: this.state.link,
+            instruction: this.state.instruction,
+            image: this.state.image
+        }))
 
-        this.setState({name:'',
+        const post = JSON.stringify({
+            name: this.state.name,
+            cooking_time: this.state.cooking_time,
+            portions: this.state.portions,
+            link: this.state.link,
+            instruction: this.state.instruction,
+            image: this.state.image
+        })
+        console.log(post)
+        let data = ''
+
+        await fetch(url, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                name: this.state.name,
+                cooking_time: this.state.cooking_time,
+                portions: this.state.portions,
+                link: this.state.link,
+                instruction: this.state.instruction,
+                image: this.state.image
+            })
+        })
+
+            .then(async response => {
+                data = await response.json();
+                if (!response.ok) {
+                    const error = (data && data.message) || response.status;
+                    console.log("Error when adding to database");
+                    return Promise.reject(error)
+                }
+                console.log("moving to catch")
+            })
+            .catch(error => {
+                console.error("There was an error!", error)
+            })
+        console.log(data)
+    }*/
+
+        event.preventDefault();
+        const url = "https://v0ey9ci8fb.execute-api.eu-west-1.amazonaws.com/dev/api/"
+        const data = JSON.stringify({name: this.state.name, cooking_time: this.state.cooking_time, portions: this.state.portions, link: this.state.link,
+            instruction: this.state.instruction, image: this.state.image})
+        axios.post(url,data)
+        .then(res => {
+            console.log(res);
+            console.log(res.data);
+        })
+        console.log("post complete")
+    }
+
+
+ /*   this.setState({name:'',
             cooking_time: '',
             instruction:'',
             link: '',
             portions: '',
-            image: ''})
-        event.preventDefault();
-    }
+            image: ''});*/
+
+
+
 
     render() {
         return (
@@ -91,7 +139,7 @@ class NewRecipe extends Component {
                 </label>
                     <label>
                         Valmistusohje:
-                        <input type="text" value={this.state.instruction} onChange={this.handleChangeInstructions}/>
+                        <textarea value={this.state.instruction} onChange={this.handleChangeInstructions}/>
                     </label>
                     <label>
                         Linkki ohjeeseen:
@@ -103,7 +151,6 @@ class NewRecipe extends Component {
                     </label>
                     <input type="submit" value="Lisää resepti!"/>
                 </form>
-
             </div>
         );
     }
