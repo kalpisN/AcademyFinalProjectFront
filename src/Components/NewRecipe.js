@@ -146,6 +146,7 @@ class NewRecipe extends Component {
                         </Form.Label>
                         <Col sm={10}>
                             <Form.Control type="text" name="time" value={this.state.cooking_time} onChange={this.handleChangeCookingtime}/>
+
                         </Col>
                     </Form.Group>
                 <Form.Group as={Row} controlId="formHorizontalPortions">
@@ -154,6 +155,7 @@ class NewRecipe extends Component {
                     </Form.Label>
                     <Col sm={10}>
                         <Form.Control type="text" name="portions" value={this.state.portions} onChange={this.handleChangePortions}/>
+
                     </Col>
                 </Form.Group>
                     <Form.Group as={Row} controlId="formHorizontalInstruction">
@@ -179,6 +181,7 @@ class NewRecipe extends Component {
                         <Col sm={10}>
                             <Form.Control type="text" value={this.state.image} onChange={this.handleChangeImage}/>
                         </Col>
+                        {this.state.errormessage}
                     </Form.Group>
                     <Form.Group as={Row}>
                         <Col sm={{ span: 10, offset: 2 }}>
