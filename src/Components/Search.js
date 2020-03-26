@@ -31,8 +31,8 @@ function Search() {
         return 'loading...'
     }else {
         return (
-            <div>
-                <div className='heading'>Hae reseptiä</div>
+            <div className={"newRecipeForm"}>
+                <div className={'heading'}>Hae reseptiä</div>
                 <div className='searchBar'>
                     <input className='searchInput' placeholder='Kirjoita reseptin nimi...' value={filter} onChange={handlefilterChange}/>
                 </div>
