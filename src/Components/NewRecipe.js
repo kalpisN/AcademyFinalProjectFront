@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Button} from "react-bootstrap";
+import {API_BASE_URL} from "./helper";
 
 class NewRecipe extends Component {
     constructor(props) {
@@ -121,7 +122,7 @@ class NewRecipe extends Component {
     }*/
 
         event.preventDefault();
-        const url = "https://v0ey9ci8fb.execute-api.eu-west-1.amazonaws.com/dev/api/"
+        const url = API_BASE_URL + '/recipes';
         const data = JSON.stringify({name: this.state.name, cooking_time: this.state.cooking_time, portions: this.state.portions, link: this.state.link,
             instruction: this.state.instruction, image: this.state.image})
         axios.post(url,data)

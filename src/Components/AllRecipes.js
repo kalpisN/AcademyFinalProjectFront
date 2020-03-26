@@ -28,7 +28,6 @@ console.log('here are filtered recipes:' , filtered)
         {rows}
     </StackGrid>
 
-
 }
 
 export default AllRecipes;

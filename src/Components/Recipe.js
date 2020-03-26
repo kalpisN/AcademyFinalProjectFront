@@ -1,24 +1,27 @@
 import React from 'react';
-import DeleteRecipe from "./DeleteRecipe";
-import {API_BASE_URL} from "./helper";
+import Card from "react-bootstrap/Card";
+import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
 
 
 
 const Recipe = (props) => {
-        const url = API_BASE_URL + '/recipes/' + props.id;
         return (
-            <div className='recipeblock'>
+            <Card>
+                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Body>
+                            <Card.Title>{props.name}</Card.Title>
+                            <Card.Text>
+                                    <Row>Ruuanlaittoaika: {props.cooking_time}</Row>
+                                    <Row>Valmistusohje: {props.instruction}</Row>
 
-                <h4>{props.name}</h4>
-                <p>Ruuanlaittoaika: {props.cooking_time}</p>
-                <p>Valmistusohje: {props.instruction}</p>
-                <button onClick={() =>
-                        fetch(url, {
-                        method: 'DELETE'
-                }).then(r => r.json())}>Delete</button>
-            </div>
+                            </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                            <Row>Edit</Row>
+                    </Card.Footer>
+            </Card>
         )
-
 }
 
 export default Recipe
