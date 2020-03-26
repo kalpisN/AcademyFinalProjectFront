@@ -10,6 +10,7 @@ import {
 import Search from "./Search";
 import NewRecipe from "./NewRecipe";
 import ShoppingList from "./ShoppingList";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {

@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import {Button} from "react-bootstrap";
 
 class NewRecipe extends Component {
     constructor(props) {
@@ -9,7 +13,8 @@ class NewRecipe extends Component {
             instruction:'',
             link: '',
             portions: '',
-            image: ''};
+            image: '',
+            errormessage: ''};
         this.handleChangeName=this.handleChangeName.bind(this);
         this.handleChangeCookingtime=this.handleChangeCookingtime.bind(this);
         this.handleChangePortions=this.handleChangePortions.bind(this);
@@ -26,10 +31,28 @@ class NewRecipe extends Component {
 
     }
     handleChangeCookingtime(event){
+        let nam = event.target.name;
+        let val = event.target.value;
+        let err ='';
+        if (nam === "time") {
+            if (!Number(val)) {
+                err = <strong>Anna kokkausaika numerona!</strong>;
+            }
+        }
+        this.setState({errormessage: err})
         this.setState({cooking_time: event.target.value});
 
     }
     handleChangePortions(event){
+        let nam = event.target.name;
+        let val = event.target.value;
+        let err= '';
+        if (nam === "portions") {
+            if (!Number(val)) {
+                err = <strong>Anna annoskoko numerona!</strong>;
+            }
+        }
+        this.setState({errormessage: err})
         this.setState({portions: event.target.value});
     }
 
@@ -125,17 +148,17 @@ class NewRecipe extends Component {
             <div className={"newRecipeForm"}>
                 <h1>Täällä voit lisätä uusia reseptejä</h1>
                 <hr/>
-                <form onSubmit={this.handleSubmit}>
+               {/* <form onSubmit={this.handleSubmit}>
                     <label>Nimi:
                         <input type="text" value={this.state.name} onChange={this.handleChangeName}/>
                     </label>
                     <label>
                         Kokkausaika:
-                        <input type="text" value={this.state.cooking_time} onChange={this.handleChangeCookingtime}/>min
+                        <input type="text" name="time" value={this.state.cooking_time} onChange={this.handleChangeCookingtime}/>min
                     </label><br/>
                     <label>
                     Annoskoko:
-                    <input type="text" value={this.state.portions} onChange={this.handleChangePortions}/>
+                    <input type="text" name="portions" value={this.state.portions} onChange={this.handleChangePortions}/>
                 </label>
                     <label>
                         Valmistusohje:
@@ -150,7 +173,57 @@ class NewRecipe extends Component {
                         <input type="text" value={this.state.image} onChange={this.handleChangeImage}/>
                     </label>
                     <input type="submit" value="Lisää resepti!"/>
-                </form>
+                    {this.state.errormessage}
+                </form>*/}
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Group as={Row} controlId="formHorizontalName">
+                        <Form.Label column sm={2}>
+                            Nimi:
+                        </Form.Label>
+                        <Col sm={10}>
+                            <Form.Control type="text" value={this.state.name} onChange={this.handleChangeName}/>
+                        </Col>
+                    </Form.Group>
+                    <Form.Group as={Row} controlId="formHorizontalCookingtime">
+                        <Form.Label column sm={2}>
+                            Kokkausaika:
+                        </Form.Label>
+                        <Col sm={10}>
+                            <Form.Control type="text" name="time" value={this.state.cooking_time} onChange={this.handleChangeCookingtime}/>min
+                        </Col>
+                    </Form.Group>
+                    <Form.Group as={Row} controlId="formHorizontalInstruction">
+                        <Form.Label column sm={2}>
+                            Valmistusohje:
+                        </Form.Label>
+                        <Col sm={10}>
+                            <Form.Control type="textarea" value={this.state.instruction} onChange={this.handleChangeInstructions}/>
+                        </Col>
+                    </Form.Group>
+                    <Form.Group as={Row} controlId="formHorizontalLink">
+                        <Form.Label column sm={2}>
+                            Linkki ohjeeseen:
+                        </Form.Label>
+                        <Col sm={10}>
+                            <Form.Control type="text" value={this.state.link} onChange={this.handleChangeLink}/>
+                        </Col>
+                    </Form.Group>
+                    <Form.Group as={Row} controlId="formHorizontalImage">
+                        <Form.Label column sm={2}>
+                            Linkki kuvaan:
+                        </Form.Label>
+                        <Col sm={10}>
+                            <Form.Control type="text" value={this.state.image} onChange={this.handleChangeImage}/>
+                        </Col>
+                        {this.state.errormessage}
+                    </Form.Group>
+                    <Form.Group as={Row}>
+
+                        <Col sm={{ span: 10, offset: 2 }}>
+                            <Button variant="flat"  type="submit">Lisää resepti</Button>
+                        </Col>
+                    </Form.Group>
+                    </Form>
             </div>
         );
     }
