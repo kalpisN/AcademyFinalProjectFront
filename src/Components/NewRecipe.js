@@ -220,7 +220,7 @@ class NewRecipe extends Component {
                     <Form.Group as={Row}>
 
                         <Col sm={{ span: 10, offset: 2 }}>
-                            <Button variant="flat"  type="submit">Lisää resepti</Button>
+                            <Button type="submit">Lisää resepti</Button>
                         </Col>
                     </Form.Group>
                     </Form>
