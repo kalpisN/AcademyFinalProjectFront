@@ -4,7 +4,7 @@ import Recipe from "./Recipe";
 
 function AllRecipes(props) {
     console.log(props.recipes)
-   const filtered = props.recipes.body.filter(recipe =>
+   const filtered = props.recipes.filter(recipe =>
         recipe.name.toUpperCase().includes(props.filter.trim().toUpperCase()))
 console.log('here are filtered recipes:' , filtered)
 
