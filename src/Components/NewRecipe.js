@@ -6,7 +6,6 @@ import Col from "react-bootstrap/Col";
 import {Button} from "react-bootstrap";
 import {API_BASE_URL} from "./helper";
 import Message from "./Message";
-
 class NewRecipe extends Component {
     constructor(props) {
         super(props);
@@ -25,15 +24,11 @@ class NewRecipe extends Component {
         this.handleChangeInstructions=this.handleChangeInstructions.bind(this);
         this.handleChangeLink=this.handleChangeLink.bind(this);
         this.handleChangeImage=this.handleChangeImage.bind(this);
-
         this.handleSubmit = this.handleSubmit.bind(this);
         this.emptyForm = this.emptyForm.bind(this);
-
     }
-
     handleChangeName(event){
         this.setState({name: event.target.value});
-
     }
     handleChangeCookingtime(event){
         let nam = event.target.name;
@@ -46,7 +41,6 @@ class NewRecipe extends Component {
         }
         this.setState({errormessage: err})
         this.setState({cooking_time: event.target.value});
-
     }
     handleChangePortions(event){
         let nam = event.target.name;
@@ -60,15 +54,12 @@ class NewRecipe extends Component {
         this.setState({errormessage: err})
         this.setState({portions: event.target.value});
     }
-
     handleChangeInstructions(event){
         this.setState({instruction: event.target.value});
     }
-
     handleChangeLink(event){
         this.setState({link: event.target.value});
     }
-
     handleChangeImage(event){
         this.setState({image: event.target.value});
     }
@@ -101,14 +92,10 @@ class NewRecipe extends Component {
                     this.setState({message: message});
                     this.toggleHidden();
                 }
-
             })
-
         console.log(message)
         console.log("post action complete")
-
     }
-
     emptyForm() {
         this.setState({
             name: '',
@@ -122,10 +109,6 @@ class NewRecipe extends Component {
             isHidden:true
         });
     }
-
-
-
-
     render() {
         return (
             <div className={"newRecipeForm"}>
@@ -146,16 +129,18 @@ class NewRecipe extends Component {
                         </Form.Label>
                         <Col sm={10}>
                             <Form.Control type="text" name="time" value={this.state.cooking_time} onChange={this.handleChangeCookingtime}/>
+                            {this.state.errormessage}
                         </Col>
                     </Form.Group>
-                <Form.Group as={Row} controlId="formHorizontalPortions">
-                    <Form.Label column sm={2}>
-                        Annoskoko:
-                    </Form.Label>
-                    <Col sm={10}>
-                        <Form.Control type="text" name="portions" value={this.state.portions} onChange={this.handleChangePortions}/>
-                    </Col>
-                </Form.Group>
+                    <Form.Group as={Row} controlId="formHorizontalPortions">
+                        <Form.Label column sm={2}>
+                            Annoskoko:
+                        </Form.Label>
+                        <Col sm={10}>
+                            <Form.Control type="text" name="portions" value={this.state.portions} onChange={this.handleChangePortions}/>
+                            {this.state.errormessage}
+                        </Col>
+                    </Form.Group>
                     <Form.Group as={Row} controlId="formHorizontalInstruction">
                         <Form.Label column sm={2}>
                             Valmistusohje:
@@ -185,7 +170,7 @@ class NewRecipe extends Component {
                             <Button type="submit">Lisää resepti</Button>
                         </Col>
                     </Form.Group>
-                    </Form>
+                </Form>
                 <Form.Group as={Row}>
                     <Col sm={{ span: 10, offset: 2 }}>
                         <Button type="text" onClick={this.emptyForm}>Tyhjennä kentät</Button>

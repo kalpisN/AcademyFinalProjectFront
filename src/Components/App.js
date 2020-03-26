@@ -1,5 +1,4 @@
 import React from 'react';
-
 import '../App.css';
 import {
     BrowserRouter as Router,
@@ -11,6 +10,7 @@ import Search from "./Search";
 import NewRecipe from "./NewRecipe";
 import ShoppingList from "./ShoppingList";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import EditRecipe from "./EditRecipe";
 
 
 function App() {
@@ -34,6 +34,9 @@ function App() {
                         </Route>
                         <Route path="/">
                             <Search/>
+                        </Route>
+                        <Route path="/muokkaa">
+                            <EditRecipe/>
                         </Route>
                     </Switch>
                 </div>
