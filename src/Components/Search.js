@@ -2,6 +2,7 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import AllRecipes from "./AllRecipes";
+import {API_BASE_URL} from "./helper";
 
 function Search() {
     const [recipes, setRecipes] = useState([])
@@ -10,7 +11,7 @@ function Search() {
 
 
     useEffect(() => {
-        const url = 'https://v0ey9ci8fb.execute-api.eu-west-1.amazonaws.com/dev/api/allrecipes'
+        const url = API_BASE_URL + '/recipes';
         console.log('effect')
         axios
             .get(url)
