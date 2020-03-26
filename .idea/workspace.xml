@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fd2bcbe-4c8c-45ae-9e22-c5ac9d9dca4d" name="Default Changelist" comment="">
+
+      
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/AllRecipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AllRecipes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Recipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Recipe.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Search.js" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +39,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/recipesFRONT/RecipesReactFront-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -90,7 +93,7 @@
       <updated>1584957939556</updated>
       <workItem from="1584957943597" duration="17484000" />
       <workItem from="1585034111310" duration="3675000" />
-      <workItem from="1585052409588" duration="3144000" />
+      <workItem from="1585052409588" duration="28997000" />
     </task>
     <servers />
   </component>
@@ -102,7 +105,7 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="692" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1584960070350" />
-    <state x="932" y="168" key="FileChooserDialogImpl" timestamp="1585039765898">
+    <state x="932" y="168" key="FileChooserDialogImpl" timestamp="1585130220736">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="932" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585039765898" />
