@@ -52,10 +52,12 @@
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  background-color: #333;
 }
 
 .link {
   float: left;
+  text-decoration: none;
 }
 
 .link a {
@@ -64,10 +66,20 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+
 }
 
 .link a:hover {
   background-color: mediumspringgreen;
 
+}
+
+.newRecipeForm {
+  padding: 50px 60px;
+
+}
+
+.heading {
+  font-style: italic;
 }
 
