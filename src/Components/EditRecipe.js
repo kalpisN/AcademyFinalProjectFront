@@ -1,33 +1,39 @@
-import React, {Component} from "react";
-import InputGroup from 'react-bootstrap/InputGroup'
+import React from "react";
+
 import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
+
 import Button from "react-bootstrap/Button";
-
-class EditRecipe extends Component {
-
-
-    render() {
-        return(
-            <div>
-            <Form>
-            <InputGroup className="mb-3">
-                <FormControl
-                    placeholder="Recipient's username"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
-                />
-                <InputGroup.Append>
-                    <Button variant="outline-secondary">Button</Button>
-                </InputGroup.Append>
-            </InputGroup>
-            </Form>
-            </div>
-        )
-    }
+import './EditRecipe.css';
+import Modal from "react-bootstrap/Modal";
 
 
 
+function EditRecipe(props) {
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Form>
+                <Modal.Header closeButton>
+                    <Modal.Title id="contained-modal-title-vcenter">
+                        Reseptin editointi {props.id}
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <h4>{props.name}</h4>
+                    <h4>{props.cooking_time}</h4>
+                    <h4>{props.portions}</h4>
+                    <h4>{props.instruction}</h4>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button onClick={props.onHide}>Close</Button>
+                </Modal.Footer>
+                </Form>
+            </Modal>
+        );
 }
-
 export default EditRecipe;

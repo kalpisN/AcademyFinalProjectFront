@@ -111,7 +111,7 @@ class NewRecipe extends Component {
     }
     render() {
         return (
-            <div className={"newRecipeForm"}>
+            <div className="newRecipeForm">
                 <h1>Täällä voit lisätä uusia reseptejä</h1>
                 <hr/>
                 <Form onSubmit={this.handleSubmit}>
