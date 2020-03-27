@@ -1,11 +1,10 @@
 import React from 'react';
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
-import EditRecipe from "./EditRecipe";
+import EditRecipe from "../ModalHandling/EditRecipe";
 import EditSharpIcon from '@material-ui/icons/EditSharp';
-import './EditRecipe.css'
 import VisibilitySharpIcon from '@material-ui/icons/VisibilitySharp';
-import ShowRecipeDetails from "./ShowRecipeDetails";
+import ShowRecipeDetails from "../ModalHandling/ShowRecipeDetails";
 import Button from "react-bootstrap/Button";
 
 function Recipe(props) {

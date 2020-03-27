@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {API_BASE_URL} from "./helper";
+import {API_BASE_URL} from "../Helpers/API";
 import Form from "react-bootstrap/Form";
 
 
@@ -7,7 +7,7 @@ function Ingredient(props) {
 
     const [ingredients, setIngredients] = useState([])
 
-    const url = API_BASE_URL + '/ingredientsByRecipe/pulla';
+    const url = API_BASE_URL + '/ingredientsByRecipe/' + props.name;
 
     fetch(url, {
         method: 'GET'

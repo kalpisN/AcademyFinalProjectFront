@@ -4,8 +4,8 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from 'react-bootstrap/Button';
-import {API_BASE_URL} from "./helper";
-import Message from "./Message";
+import {API_BASE_URL} from "../Helpers/API";
+import Message from "../Helpers/Message";
 
 class NewRecipe extends Component {
     constructor(props) {
