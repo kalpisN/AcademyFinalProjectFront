@@ -6,9 +6,8 @@ import Row from "react-bootstrap/Row";
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
-import './Ingredient';
 import Form from "react-bootstrap/Form";
-import Ingredient from "./Ingredient";
+import Ingredient from "../Ingredients/Ingredient";
 
 
 function ShowRecipeDetails(props) {

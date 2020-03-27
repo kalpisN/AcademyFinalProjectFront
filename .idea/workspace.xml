@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8fd2bcbe-4c8c-45ae-9e22-c5ac9d9dca4d" name="Default Changelist" comment="" />
+    <list default="true" id="8fd2bcbe-4c8c-45ae-9e22-c5ac9d9dca4d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AllRecipes.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipes/AllRecipes.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AllRecipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipes/AllRecipes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/DeleteRecipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipes/DeleteRecipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/EditRecipe.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModalHandling/EditRecipe.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/EditRecipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModalHandling/EditRecipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GetMeals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormHandling/GetMeals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Ingredient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ingredients/Ingredient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/Message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NewIngredient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormHandling/NewIngredient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NewRecipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormHandling/NewRecipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NewRecipeAndIngredient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NewRecipeAndIngredient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Recipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipes/Recipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipes/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ShoppingList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoppingList/ShoppingList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ShowRecipeDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModalHandling/ShowRecipeDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/API.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +65,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Academy\finalproject\src\Components" />
+      <recent name="C:\Academy\FinalProject\AcademyFinalProjectFront\src\FormHandling" />
+      <recent name="C:\Academy\FinalProject\AcademyFinalProjectFront\src\Ingredients" />
+      <recent name="C:\Academy\FinalProject\AcademyFinalProjectFront\src\Recipes" />
+      <recent name="C:\Academy\FinalProject\AcademyFinalProjectFront\src\ShoppingList" />
+      <recent name="C:\Academy\FinalProject\AcademyFinalProjectFront\src\Helpers" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">

@@ -2,7 +2,7 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import AllRecipes from "./AllRecipes";
-import {API_BASE_URL} from "./helper";
+import {API_BASE_URL} from "../Helpers/API";
 
 function Search() {
     const [recipes, setRecipes] = useState([])
