@@ -11,6 +11,7 @@ import NewRecipe from "./NewRecipe";
 import ShoppingList from "./ShoppingList";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EditRecipe from "./EditRecipe";
+import NewRecipeAndIngredient from "./NewRecipeAndIngredient";
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
                     </nav>
                     <Switch>
                         <Route path="/uusiresepti">
-                            <NewRecipe/>
+                            <NewRecipeAndIngredient/>
                         </Route>
                         <Route path="/kauppalista">
                             <ShoppingList/>
