@@ -31,15 +31,16 @@ function ShowRecipeDetails(props) {
                         <Table>
                         <Row><td>Ainesosa</td><td>Määrä</td><td>Yksikkö</td></Row>
                             <Form>
-                                {['checkbox'].map((type) => (
-                                    <div key={type} className="mb-3">
-                                        <Form.Check type={type} id={`check-api-${type}`}>
-                                            <Form.Check.Input type={type} isValid />
+                                {/*{['checkbox'].map((type) => (*/}
+                                    {/*<div key={checkbox} className="mb-3">*/}
+
+                                        <Form.Check type="checkbox" id={`check-api-checkbox`}>
+                                            <Form.Check.Input type="checkbox" isValid />
                                             <Ingredient name={props.name}/>
-                                            <Form.Control.Feedback type="valid">You did it!</Form.Control.Feedback>
+                                         {/*   <Form.Control.Feedback type="valid">You did it!</Form.Control.Feedback>*/}
                                         </Form.Check>
-                                    </div>
-                                ))}
+                                   {/* </div>*/}
+                            {/*    ))}*/}
                             </Form>
                         </Table>
                     </Col>
