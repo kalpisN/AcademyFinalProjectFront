@@ -36,9 +36,6 @@ function App() {
                         <Route path="/">
                             <Search/>
                         </Route>
-                        <Route path="/muokkaa">
-                            <EditRecipe/>
-                        </Route>
                     </Switch>
                 </div>
             </Router>

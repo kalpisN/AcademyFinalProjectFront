@@ -129,9 +129,11 @@ class NewRecipe extends Component {
     render() {
         let {name, cooking_time, instruction, link, portions, image, ingredients} = this.state
         return (
+
             <div className={"newRecipeForm"}>
                 <Form onSubmit={this.handleSubmit} onChange={this.handleChange}>
                     <Form.Group as={Row}>
+
                         <Form.Label column sm={2}>
                             Ruokalaji:
                         </Form.Label>
