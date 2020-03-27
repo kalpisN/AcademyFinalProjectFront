@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from "react-bootstrap/Button";
 import './EditRecipe.css';
 import Modal from "react-bootstrap/Modal";
-import DeleteRecipe from "../Recipes/DeleteRecipe";
+import DeleteRecipe from "./DeleteRecipe";
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import Card from "react-bootstrap/Card";
 
@@ -38,7 +38,7 @@ function EditRecipe(props) {
                 </Modal.Footer>
                 </Form>
                 <DeleteRecipe
-                    name={props.name}
+                    id={props.id}
                     show={deleteModalShow}
                     onHide={() => setDeleteModalShow(false)}
                 />
