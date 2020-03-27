@@ -70,11 +70,16 @@
 }
 
 .link a:hover {
-  background-color: mediumspringgreen;
+  background-color: royalblue;
 
 }
 
 .newRecipeForm {
+  padding: 50px 60px;
+
+}
+
+.newIngredientForm {
   padding: 50px 60px;
 
 }

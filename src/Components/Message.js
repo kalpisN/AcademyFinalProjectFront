@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import {Alert} from "react-bootstrap";
 
 class Message extends Component {
     constructor(props) {
@@ -8,7 +8,7 @@ class Message extends Component {
     render() {
         return (
             <div>
-            <p>{this.props.message}</p>
+                <Alert variant='primary'>{this.props.message}</Alert>
             </div>
         );
     }
