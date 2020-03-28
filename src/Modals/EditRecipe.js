@@ -5,45 +5,41 @@ import './EditRecipe.css';
 import Modal from "react-bootstrap/Modal";
 import DeleteRecipe from "./DeleteRecipe";
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
 
-
-
-function EditRecipe(props) {
+function EditRecipe(props) {
 
     const [deleteModalShow, setDeleteModalShow] = React.useState(false);
 
-        return (
-            <Modal
-                {...props}
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-            >
-                <Form>
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Form>
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        Reseptin editointi {props.id}
+                        {props.name}
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <h4>{props.name}</h4>
-                    <h4>{props.cooking_time}</h4>
-                    <h4>{props.portions}</h4>
-                    <h4>{props.instruction}</h4>
+                    <Col>Valmistusaika: {props.cooking_time}</Col>
+                    <Col>Annokset: {props.portions}</Col>
+                    <Col>Valmistusohjeet: {props.instruction}</Col>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button onClick={props.onHide}>Close</Button>
                     <Button variant="light" onClick={() => setDeleteModalShow(true)}><DeleteForeverIcon/></Button>
                 </Modal.Footer>
-                </Form>
-                <DeleteRecipe
-                    id={props.id}
-                    show={deleteModalShow}
-                    onHide={() => setDeleteModalShow(false)}
-                />
-            </Modal>
-
-        );
+            </Form>
+            <DeleteRecipe
+                id={props.id}
+                show={deleteModalShow}
+                onHide={() => setDeleteModalShow(false)}
+            />
+        </Modal>
+    );
 }
 export default EditRecipe;

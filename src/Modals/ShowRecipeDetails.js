@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "react-bootstrap/Button";
 import './EditRecipe.css';
 import Modal from "react-bootstrap/Modal";
@@ -7,10 +7,12 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
-import Ingredient from "../Ingredients/Ingredient";
+import Ingredients from "../Ingredients/Ingredients";
+import {API_BASE_URL} from "../Helpers/API";
 
 
 function ShowRecipeDetails(props) {
+
 
     return (
         <Modal
@@ -32,16 +34,16 @@ function ShowRecipeDetails(props) {
                         <Row><td>Ainesosa</td><td>Määrä</td><td>Yksikkö</td></Row>
                             <Form>
                                 {/*{['checkbox'].map((type) => (*/}
-                                    {/*<div key={checkbox} className="mb-3">*/}
+                                <div key="checkbox" className="mb-3">
 
-                                        <Form.Check type="checkbox" id={`check-api-checkbox`}>
-                                            <Form.Check.Input type="checkbox" isValid />
-                                            <Ingredient name={props.name}/>
-                                         {/*   <Form.Control.Feedback type="valid">You did it!</Form.Control.Feedback>*/}
-                                        </Form.Check>
-                                   {/* </div>*/}
-                            {/*    ))}*/}
-                            </Form>
+                                <Form.Check type="checkbox" id={`check-api-checkbox`}>
+                                    <Form.Check.Input type="checkbox" isValid />
+                                    <Ingredients/>
+                            {/*   <Form.Control.Feedback type="valid">You did it!</Form.Control.Feedback>*/}
+                                    </Form.Check>
+                                 </div>
+                        {/*    ))}*/}
+                    </Form>
                         </Table>
                     </Col>
                     <Col>Valmistusohje: {props.instruction}</Col>

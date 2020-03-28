@@ -25,8 +25,8 @@ function Recipe(props) {
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer>
-                    <Button variant="light" onClick={() => setRecipeModalShow(true)}><VisibilitySharpIcon/></Button>
-                    <Button variant="light" onClick={() => setEditModalShow(true)}><EditSharpIcon/></Button>
+                    <Button position="right" variant="light" onClick={() => setRecipeModalShow(true)}><VisibilitySharpIcon/></Button>
+                    <Button position="right" variant="light" onClick={() => setEditModalShow(true)}><EditSharpIcon/></Button>
                 </Card.Footer>
                 <ShowRecipeDetails
                     id={props.id}
