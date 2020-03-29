@@ -21,10 +21,7 @@ class ImageUpload extends Component {
 
         const file = this.uploadInput.files[0];
         const fileParts = this.uploadInput.files[0].name.split('.');
-        const fileName = fileParts[0]
         const fileType = fileParts[1];
-        const recipe_name = this.props.recipeName
-        console.log(recipe_name)
         console.log("Preparing the upload");
         axios.post("https://uk5p4uqkgi.execute-api.eu-west-1.amazonaws.com/dev/requestUploadURL",{
             fileType : fileType
@@ -37,7 +34,6 @@ class ImageUpload extends Component {
                 const dataParts = signedRequest.split('?');
                 const url = dataParts[0]
                 this.setState({url: url})
-                console.log(this.props.value)
                 console.log("Recieved a signed request " + signedRequest);
                 const options = {
                     headers: {
