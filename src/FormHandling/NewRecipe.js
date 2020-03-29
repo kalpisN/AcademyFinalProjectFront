@@ -128,6 +128,10 @@ class NewRecipe extends Component {
         console.log(this.state.ingredients)
     }
 
+    myCallback = (dataFromChild) =>{
+        this.setState({image:dataFromChild})
+    }
+
     render() {
         let {name, cooking_time, instruction, link, portions, image, ingredients} = this.state
         return (
@@ -182,7 +186,7 @@ class NewRecipe extends Component {
                             Kuva:
                         </Form.Label>
                         <Col sm={10}>
-                            <ImageUpload name= "image" id="image" value={image} onChange={this.handleChange}/>
+                            <ImageUpload name= "image" id="image" value={image} onChange={this.handleChange} callbacFromParent={this.myCallback} />
                         </Col>
 
                     </Form.Group>

@@ -45,6 +45,7 @@ class ImageUpload extends Component {
                     .then(result => {
                         console.log("Upload completed")
                         this.setState({success: true});
+                        this.someFunction();
                     })
                     .catch(error => {
                         alert("ERROR " + JSON.stringify(error));
@@ -55,7 +56,9 @@ class ImageUpload extends Component {
             })
     }
 
-
+    someFunction=()=>{
+        this.props.callbacFromParent(this.state.url)
+    }
     render() {
         const ThumbImage = () =>(
             <div style={{paddingTop:20,paddingBottom:30}}>
