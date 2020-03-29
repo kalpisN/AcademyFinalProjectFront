@@ -3,8 +3,8 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Button} from "react-bootstrap";
-import Message from "./Message";
-import GetMeals from "./GetMeals";
+import Message from "../Helpers/Message";
+
 
 class NewIngredient extends Component {
     constructor(props) {

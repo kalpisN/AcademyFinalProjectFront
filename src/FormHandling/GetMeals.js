@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {API_BASE_URL} from "./helper";
+import {API_BASE_URL} from "../Helpers/API";
 import Form from "react-bootstrap/Form";
 
 class GetMeals extends Component {
