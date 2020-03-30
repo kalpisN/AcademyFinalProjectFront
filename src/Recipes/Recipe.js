@@ -11,16 +11,18 @@ function Recipe(props) {
 
     const [recipeModalShow, setRecipeModalShow] = React.useState(false);
     const [editModalShow, setEditModalShow] = React.useState(false);
+    console.log(props.instruction);
 
 
         return (
             <Card>
-                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Img variant="top" src={props.image} widht={160}/>
                 <Card.Body>
                     <Card.Title>{props.name}</Card.Title>
                     <Card.Text>
                         <Row>Ruuanlaittoaika: {props.cooking_time}</Row>
                         <Row>Valmistusohje: {props.instruction}</Row>
+
                         <Row>Annokset: {props.portions}</Row>
                     </Card.Text>
                 </Card.Body>
@@ -40,6 +42,7 @@ function Recipe(props) {
                 <EditRecipe
                     id={props.id}
                     name={props.name}
+                    image={props.image}
                     cooking_time={props.cooking_time}
                     portions={props.portions}
                     instruction={props.instruction}
