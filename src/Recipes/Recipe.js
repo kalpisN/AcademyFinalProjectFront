@@ -12,8 +12,6 @@ function Recipe(props) {
 
     const [recipeModalShow, setRecipeModalShow] = React.useState(false);
     const [editModalShow, setEditModalShow] = React.useState(false);
-    console.log(props.instruction);
-
 
         return (
             <Card>
@@ -22,7 +20,6 @@ function Recipe(props) {
                     <Card.Title>{props.name}</Card.Title>
                     <Card.Text>
                         <Row>Ruuanlaittoaika: {props.cooking_time}</Row>
-                        <Row>Valmistusohje: {props.instruction}</Row>
                         <Row>Annokset: {props.portions}</Row>
                     </Card.Text>
                 </Card.Body>
