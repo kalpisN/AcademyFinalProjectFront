@@ -37,7 +37,7 @@ function ShowRecipeDetails(props) {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Herkku</td>
+                                    <td>Kovakoodattu ainesosa</td>
                                     <td>100</td>
                                     <td>kpl</td>
                                 </tr>
