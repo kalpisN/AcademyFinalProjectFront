@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component,useState} from 'react';
 import axios from 'axios';
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import Button from 'react-bootstrap/Button';
 import {API_BASE_URL} from "../Helpers/API";
 import Message from "../Helpers/Message";
+import ImageUpload from "./ImageUpload";
 
 class NewRecipe extends Component {
     constructor(props) {
@@ -27,6 +28,7 @@ class NewRecipe extends Component {
         this.emptyForm=this.emptyForm.bind(this);
 
     }
+
 
     toggleHidden(){
         this.setState({isHidden: !this.state.isHidden})
@@ -85,8 +87,8 @@ class NewRecipe extends Component {
         axios.post(url, data)
             .then(res => {
                 console.log(res);
-                console.log(res.data.statusCode);
-                if (!(res.data.statusCode === 200)) {
+                console.log(res.status);
+                if (!(res.status === 200)) {
                     message = 'HUPS! Jotain meni vikaan!';
                     this.setState({message: message});
                     this.toggleHidden();
@@ -124,6 +126,10 @@ class NewRecipe extends Component {
             ingredients: [...prevState.ingredients, {iname:'', amount:'', unit:''}],
         }));
         console.log(this.state.ingredients)
+    }
+
+    myCallback = (dataFromChild) =>{
+        this.setState({image:dataFromChild})
     }
 
     render() {
@@ -177,10 +183,10 @@ class NewRecipe extends Component {
                     </Form.Group>
                     <Form.Group as={Row}>
                         <Form.Label column sm={2}>
-                            Linkki kuvaan:
+                            Kuva:
                         </Form.Label>
                         <Col sm={10}>
-                            <Form.Control type="text" name= "image" id="image" value={image} onChange={this.handleChange}/>
+                            <ImageUpload name= "image" id="image" value={image} onChange={this.handleChange} callbacFromParent={this.myCallback} />
                         </Col>
 
                     </Form.Group>

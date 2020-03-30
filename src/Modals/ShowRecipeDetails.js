@@ -31,19 +31,36 @@ function ShowRecipeDetails(props) {
                     <Col>Annokset: {props.portions}</Col>
                     <Col>
                         <Table>
-                        <Row><td>Ainesosa</td><td>Määrä</td><td>Yksikkö</td></Row>
-                            <Form>
-                                {/*{['checkbox'].map((type) => (*/}
-                                <div key="checkbox" className="mb-3">
+                            <thead>
+                            <tr>
+                                <th>Ainesosa</th>
+                                <th>Määrä</th>
+                                <th>     </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Herkku</td>
+                                    <td>100</td>
+                                    <td>kpl</td>
+                                </tr>
+                                <Ingredient name={props.name}/>
+                            </tbody>
 
-                                <Form.Check type="checkbox" id={`check-api-checkbox`}>
-                                    <Form.Check.Input type="checkbox" isValid />
-                                    <Ingredients/>
-                            {/*   <Form.Control.Feedback type="valid">You did it!</Form.Control.Feedback>*/}
-                                    </Form.Check>
-                                 </div>
-                        {/*    ))}*/}
-                    </Form>
+                       {/* <Row><td>Ainesosa</td><td>Määrä</td><td>Yksikkö</td></Row>*/}
+
+                           {/* <Form> tämä aiheuttaa että ei toimi!
+                                {['checkbox'].map((type) => (
+                                    <div key={checkbox} className="mb-3">
+
+                                        <Form.Check type="checkbox" id={`check-api-checkbox`}>
+                                            <Form.Check.Input type="checkbox" isValid />
+
+                                            <Form.Control.Feedback type="valid">You did it!</Form.Control.Feedback>
+                                        </Form.Check>
+                                    </div>
+                                ))}
+                            </Form>*/}
                         </Table>
                     </Col>
                     <Col>Valmistusohje: {props.instruction}</Col>
