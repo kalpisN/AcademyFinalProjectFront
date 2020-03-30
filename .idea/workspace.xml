@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8fd2bcbe-4c8c-45ae-9e22-c5ac9d9dca4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FormHandling/NewRecipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormHandling/NewRecipe.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ingredients/Ingredient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ingredients/Ingredient.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modals/ShowRecipeDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/ShowRecipeDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nav/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nav/Navibar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShoppingList/ShoppingList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoppingList/ShoppingList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
