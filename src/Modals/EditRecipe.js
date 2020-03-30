@@ -7,8 +7,6 @@ import DeleteRecipe from "./DeleteRecipe";
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
-import Row from "react-bootstrap/Row";
-import Grid from "@material-ui/core/Grid";
 
 function EditRecipe(props) {
 
@@ -35,10 +33,12 @@ function EditRecipe(props) {
                         alignItems="flex-start"
                     >
                     <Col sm={6}>
-                    <Row><h2>{props.name}</h2></Row>
-                    <Row>Valmistusaika: {props.cooking_time}</Row>
-                    <Row>Annokset: {props.portions}</Row>
-                    <Row>Valmistusohjeet: {props.instruction}</Row></Col><Col md="auto"><Image src={props.image} height={400}/></Col>
+                    <Col><h2>{props.name}</h2></Col>
+                    <Col>Valmistusaika: {props.cooking_time}</Col>
+                    <Col>Annokset: {props.portions}</Col>
+                    <Col>Valmistusohjeet: {props.instruction}</Col>
+                    </Col>
+                    <Col md="auto"><Image src={props.image} height={300}/></Col>
                     </Grid>
                 </Modal.Body>
                 <Modal.Footer>

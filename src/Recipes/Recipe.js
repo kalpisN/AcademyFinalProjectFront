@@ -22,7 +22,6 @@ function Recipe(props) {
                     <Card.Text>
                         <Row>Ruuanlaittoaika: {props.cooking_time}</Row>
                         <Row>Valmistusohje: {props.instruction}</Row>
-
                         <Row>Annokset: {props.portions}</Row>
                     </Card.Text>
                 </Card.Body>
