@@ -1,16 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "react-bootstrap/Button";
 import './EditRecipe.css';
 import Modal from "react-bootstrap/Modal";
-import Row from "react-bootstrap/Row";
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
-import Form from "react-bootstrap/Form";
 import Ingredient from "../Ingredients/Ingredient";
 
 
 function ShowRecipeDetails(props) {
+
 
     return (
         <Modal
