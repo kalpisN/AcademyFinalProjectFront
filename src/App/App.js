@@ -9,14 +9,14 @@ import Search from "../Recipes/Search";
 import ShoppingList from "../ShoppingList/ShoppingList";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NewRecipeAndIngredient from "../Components/NewRecipeAndIngredient";
-import Navbar from "../Nav/Navbar";
+import Navibar from "../Nav/Navibar";
 
 function App() {
     return (
         <div>
             <Router>
                 <div>
-                    <Navbar/>
+                    <Navibar/>
                     <Switch>
                         <Route path="/uusiresepti">
                             <NewRecipeAndIngredient/>

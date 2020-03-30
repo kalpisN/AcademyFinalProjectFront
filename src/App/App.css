@@ -51,8 +51,7 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
-  background-color: #333;
+
 }
 
 .link {
@@ -71,7 +70,8 @@
 
 .link a:hover {
   background-color: royalblue;
-
+  color: white;
+  text-decoration: none;
 }
 
 .newRecipeForm {

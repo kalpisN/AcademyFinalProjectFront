@@ -87,8 +87,8 @@ class NewRecipe extends Component {
         axios.post(url, data)
             .then(res => {
                 console.log(res);
-                console.log(res.data.statusCode);
-                if (!(res.data.statusCode === 200)) {
+                console.log(res.status);
+                if (!(res.status === 200)) {
                     message = 'HUPS! Jotain meni vikaan!';
                     this.setState({message: message});
                     this.toggleHidden();
