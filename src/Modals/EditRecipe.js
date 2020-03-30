@@ -7,6 +7,10 @@ import DeleteRecipe from "./DeleteRecipe";
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
+import Grid from "@material-ui/core/Grid";
+import EditRecipeForm from "../FormHandling/EditRecipeForm";
+import Table from "react-bootstrap/Table";
+
 
 function EditRecipe(props) {
 
@@ -15,14 +19,14 @@ function EditRecipe(props) {
     return (
         <Modal
             {...props}
-            size="lg"
+            size={{height: 400, width: 300}}
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
             <Form>
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-
+                        <EditRecipeForm value={props.name}/>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -32,13 +36,14 @@ function EditRecipe(props) {
                         justify="center"
                         alignItems="flex-start"
                     >
-                    <Col sm={6}>
-                    <Col><h2>{props.name}</h2></Col>
-                    <Col>Valmistusaika: {props.cooking_time}</Col>
-                    <Col>Annokset: {props.portions}</Col>
-                    <Col>Valmistusohjeet: {props.instruction}</Col>
-                    </Col>
-                    <Col md="auto"><Image src={props.image} height={300}/></Col>
+                    {/*<Col sm={6}>*/}
+                        <Table col={{sm: 6}}>
+                            <tr><td>Valmistusaika:</td><td><EditRecipeForm value={props.cooking_time}/></td></tr>
+                            <tr><td>Annokset:</td><td><EditRecipeForm value={props.portions}/></td></tr>
+                            <tr><td>Valmistusohjeet:</td><td><EditRecipeForm value={props.instruction}/></td></tr>
+                        </Table>
+                    {/*</Col>*/}
+                    <Col md="auto"><Image src={props.image} fluid/></Col>
                     </Grid>
                 </Modal.Body>
                 <Modal.Footer>

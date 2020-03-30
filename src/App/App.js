@@ -13,7 +13,7 @@ import Navibar from "../Nav/Navibar";
 
 function App() {
     return (
-        <div>
+        <div className="background-of-everything">
             <Router>
                 <div>
                     <Navibar/>
