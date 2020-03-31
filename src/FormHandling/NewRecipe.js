@@ -88,18 +88,20 @@ class NewRecipe extends Component {
             .then(res => {
                 console.log(res);
                 console.log(res.status);
-                if (!(res.status === 200)) {
-                    message = 'HUPS! Jotain meni vikaan!';
-                    this.setState({message: message});
-                    this.toggleHidden();
-                } else {
+                if (res.status === 200) {
                     message = 'Resepti lisätty onnistuneesti';
                     this.setState({message: message});
                     this.toggleHidden();
+                } else {
+                    message = 'HUPS! Jotain meni vikaan!';
+                    this.setState({message: message});
+                    this.toggleHidden();
+
                 }
             })
         console.log(message)
         console.log("post action complete")
+
 
     }
     emptyForm() {
@@ -141,7 +143,7 @@ class NewRecipe extends Component {
                     <Form.Group as={Row}>
 
                         <Form.Label column sm={2}>
-                            Ruokalaji:
+                            Ruokalaji(*):
                         </Form.Label>
                         <Col sm={10}>
                             <Form.Control type="text" name ="name" id= "name" value={name} onChange={this.handleChange}/>
@@ -149,7 +151,7 @@ class NewRecipe extends Component {
                     </Form.Group>
                     <Form.Group as={Row}>
                         <Form.Label column sm={2}>
-                            Kokkausaika(min):
+                            Kokkausaika(min)(*):
                         </Form.Label>
                         <Col sm={10}>
                             <Form.Control type="text" name="cooking_time" id="cooking_time" value={cooking_time} onChange={this.handleChange}/>
@@ -158,7 +160,7 @@ class NewRecipe extends Component {
                     </Form.Group>
                 <Form.Group as={Row}>
                     <Form.Label column sm={2}>
-                        Annoskoko:
+                        Annoskoko(*):
                     </Form.Label>
                     <Col sm={10}>
                         <Form.Control type="text" name="portions" id="portions" value={portions} onChange={this.handleChange}/>
