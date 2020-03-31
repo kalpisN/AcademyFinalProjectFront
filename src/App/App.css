@@ -2,10 +2,13 @@
   text-align: center;
 
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.background-of-everything {
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
