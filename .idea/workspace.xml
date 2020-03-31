@@ -3,19 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="8fd2bcbe-4c8c-45ae-9e22-c5ac9d9dca4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FormHandling/NewRecipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormHandling/NewRecipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Helpers/Message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/Message.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ingredients/Ingredient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ingredients/Ingredient.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modals/ShowRecipeDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/ShowRecipeDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShoppingList/ShoppingList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoppingList/ShoppingList.js" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/src/FormHandling/EditRecipeForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormHandling/EditRecipeForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modals/EditRecipe.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/EditRecipe.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modals/EditRecipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/EditRecipe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Recipes/Recipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipes/Recipe.js" afterDir="false" />
-
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,25 +141,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="679" y="155" width="830" height="487" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585566657264" />
-    <state width="1401" height="95" key="GridCell.Tab.0.bottom" timestamp="1585643595132">
+    <state width="1144" height="73" key="GridCell.Tab.0.bottom" timestamp="1585651092671">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1401" height="95" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585643595132" />
-    <state width="1401" height="95" key="GridCell.Tab.0.center" timestamp="1585643595131">
+    <state width="1144" height="73" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585651092671" />
+    <state width="1144" height="73" key="GridCell.Tab.0.center" timestamp="1585651092671">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1401" height="95" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585643595131" />
-    <state width="1401" height="95" key="GridCell.Tab.0.left" timestamp="1585643595131">
+    <state width="1144" height="73" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585651092671" />
+    <state width="1144" height="73" key="GridCell.Tab.0.left" timestamp="1585651092671">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1401" height="95" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585643595131" />
-    <state width="1401" height="95" key="GridCell.Tab.0.right" timestamp="1585643595132">
+    <state width="1144" height="73" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585651092671" />
+    <state width="1144" height="73" key="GridCell.Tab.0.right" timestamp="1585651092671">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-
-    <state width="1401" height="95" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585643595132" />
-
-    <state width="1146" height="19" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585490016538" />
+    <state width="1144" height="73" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585651092671" />
     <state x="520" y="123" key="RollbackChangesDialog" timestamp="1585565089811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -175,7 +165,6 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1585573037663" />
-
     <state x="0" y="0" width="504" height="794" key="dock-window-1" timestamp="1585486975817">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
