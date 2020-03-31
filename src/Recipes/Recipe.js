@@ -7,21 +7,19 @@ import VisibilitySharpIcon from '@material-ui/icons/VisibilitySharp';
 import ShowRecipeDetails from "../Modals/ShowRecipeDetails";
 import Button from "react-bootstrap/Button";
 
+
 function Recipe(props) {
 
     const [recipeModalShow, setRecipeModalShow] = React.useState(false);
     const [editModalShow, setEditModalShow] = React.useState(false);
-    console.log(props.instruction);
-
 
         return (
             <Card>
-                <Card.Img variant="top" src={props.image} widht={160}/>
+                <Card.Img variant="top" src={props.image} width={160}/>
                 <Card.Body>
                     <Card.Title>{props.name}</Card.Title>
                     <Card.Text>
                         <Row>Ruuanlaittoaika: {props.cooking_time}</Row>
-
                         <Row>Annokset: {props.portions}</Row>
                     </Card.Text>
                 </Card.Body>
