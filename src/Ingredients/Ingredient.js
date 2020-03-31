@@ -1,9 +1,11 @@
 import React, {Component, useEffect, useState} from "react";
 import {API_BASE_URL} from "../Helpers/API";
-import Form from "react-bootstrap/Form";
-import Recipe from "../Recipes/Recipe";
 import {Spinner} from "react-bootstrap";
 import axios from "axios";
+import {Row} from "react-bootstrap";
+import {Table} from "react-bootstrap";
+import {Checkbox} from "@material-ui/core";
+import update from 'immutability-helper';
 
 
 class Ingredient extends Component {
@@ -11,13 +13,16 @@ class Ingredient extends Component {
         super(props);
         this.state = {
             ingredients: [],
-            isLoading: true
-        }
+            isLoading: true,
+            selections: {}
+
+        };
     }
+
 
     componentWillMount() {
 
-        const url = API_BASE_URL + '/ingredientsByRecipe/' + this.props.name;
+        const url = API_BASE_URL + '/ingredientsByRecipe/' + encodeURIComponent(this.props.name);
         console.log(url);
 
         axios
@@ -29,29 +34,48 @@ class Ingredient extends Component {
                 this.setState({ingredients: response.data})
                 this.setState({isLoading: false})
             })
-        /*fetch(url, {
-            method: 'GET'
-        })
-            .then((response) => {
-                this.decodeData(response.body)
-            })
-*/
+
 
         console.log(this.state.ingredients)
     }
 
-    /*decodeData(data){
-        const decoder = new TextDecoder('utf-8')
-      data
-          .getReader()
-        .read()
-        .then(({value, done}) => {
-           this.setState({ingredients : decoder.decode(value)})
-        })
-    }*/
+    handleSelect = (id) => {
+        console.log("handelselect funktiossa ollaan")
+        console.log(this.state.selections)
+        this.setState((prevState) => {
+                        if (prevState.selections[id]) {
+                            // { 1: true } -> {}
+                            return update(prevState, {
+                                selections: { $unset: [id] },
+                });
+            }
+            // {} -> { 1: true }
+            return update(prevState, {
+                selections: { [id]: { $set: true } },
+            });
+        },this.giveData);
+       console.log("state päivitetty")
+        console.log(this.state.selections)
+
+    }
+
+    giveData = () =>{
+        this.props.callbackFromParent(this.state.selections);
+    }
 
 
-//const [ingredients, setIngredients] = useState(undefined)
+
+
+    isItemSelected = id => {
+        console.log("isItemSelected funktiossa ollaan")
+        console.log(this.state.selections[id])
+
+       return this.state.selections[id]
+    }
+
+
+
+
     render() {
         return (
 
@@ -64,65 +88,17 @@ class Ingredient extends Component {
                 }
                 {!this.state.isLoading &&
 
-                <tr>{
+                <Table> {
                     this.state.ingredients.map(ingredient =>
-                    <tr>
-                    <td>{ingredient.name}</td>
-                    <td>{ingredient.amount}</td>
-                    <td>{ingredient.unit}</td>
-                    </tr>)}</tr>
+                        <Row key={ingredient.id}><td>{ingredient.name}</td><td>{ingredient.amount}</td><td>{ingredient.unit}</td><Checkbox checked={this.isItemSelected(ingredient.id)} onClick={()=> this.handleSelect(ingredient.id)}/></Row>
+                    )}</Table>
                 }
 
             </div>
         )
     }
 
-    /*return (
-        <div>
-            <h1>{'This will always render'}</h1>
-            {this.state && this.state.ingredients &&
-            <div>  {console.log(this.state.ingredients)} {this.state.ingredients.map(ingredient =>
-            <tr>
-                <td>{ingredient.name}</td>
-                <td>{ingredient.amount}</td>
-                <td>{ingredient.unit}</td>
-            </tr>)}
-          {/!*  {
-                this.state.ingredients.map(ingredient =>
-                <tr>
-                <td>{ingredient.name}</td>
-                <td>{ingredient.amount}</td>
-                <td>{ingredient.unit}</td>
-                </tr>)
-                }*!/}
-            </div>
-            }
-        </div>
-    )*/
 
-    /*const ingredientrows = ingredients.map(ingredient =>
-
-        <tr>
-            <td>{ingredient.name}</td>
-            <td>{ingredient.amount}</td>
-            <td>{ingredient.unit}</td>
-        </tr>
-    );
-
-    return (
-        <div>
-            {ingredientrows}
-        </div>)*/
-
-    /* <tr>
-         <Form.Check.Label>
-             <td>{ingredient.name}</td>
-             <td>{ingredient.amount}</td>
-             <td>{ingredient.unit}</td>
-         </Form.Check.Label>
-     </tr>
- )
-})*/
 
 }
 export default Ingredient
