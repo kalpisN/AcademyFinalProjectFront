@@ -35,7 +35,7 @@ class ShowRecipeDetails extends Component {
                 <Modal.Body>
                     <Col>Valmistusaika: {this.props.cooking_time}</Col>
                     <Col>Annokset: {this.props.portions}</Col>
-                    <Col>Ainekset:<Ingredient name={this.props.name} callbackFromParent={this.myCallback}/></Col>
+                    <Col><Ingredient name={this.props.name} callbackFromParent={this.myCallback}/></Col>
                     <Col>Valmistusohje: {this.props.instruction}</Col>
                 </Modal.Body>
                 <Modal.Footer>
