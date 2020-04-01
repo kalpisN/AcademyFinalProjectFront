@@ -10,10 +10,12 @@ import ShoppingList from "../ShoppingList/ShoppingList";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NewRecipeAndIngredient from "../Components/NewRecipeAndIngredient";
 import Navibar from "../Nav/Navibar";
+import Welcome from "../Helpers/Welcome";
 
 function App() {
     return (
         <div className="background-of-everything">
+            <Welcome/>
             <Router>
                 <div>
                     <Navibar/>

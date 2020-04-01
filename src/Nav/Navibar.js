@@ -12,14 +12,18 @@ function Navibar() {
                 <Nav.Link href="uusiresepti">Lisää uusi resepti täällä</Nav.Link>
                 <Nav.Link href="kauppalista">Kauppalista</Nav.Link>
             </Nav>
-*/
-            <nav className="navbar navbar-dark bg-dark" >
-            <ul className={"navBar"}>
-                <li className="link"><Link to="/">Kaikki reseptit tänne alle pinterest-tyyliin (home)</Link></li>
-                <li className={"link"}><Link to="/uusiresepti">Lisää uusi resepti ja ainesosa täällä</Link></li>
-                <li className={"link"}><Link to="/kauppalista">Kauppalista löytyy täältä</Link></li>
+*/ //style={{backgroundColor: "green"}}
+            //<nav className="navbar-dark bg-dark">
+
+        <nav className="navbar navbar-dark bg-transparent justify-content-center" >
+
+            <ul className="navBar">
+                <li className={"link"}><Link to="/uusiresepti">Lisää uusi resepti</Link></li>
+                <li className={"link"}><Link to="/kauppalista">Kauppalista</Link></li>
+                <li className="link"><Link to="/">Kaikki reseptit</Link></li>
             </ul>
-            </nav>
+        </nav>
+
         //</Navbar>
 
     )
