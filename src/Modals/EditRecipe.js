@@ -1,5 +1,4 @@
 import React, {useRef, useState} from "react";
-import Form from 'react-bootstrap/Form'
 import Button from "react-bootstrap/Button";
 import './EditRecipe.css';
 import Modal from "react-bootstrap/Modal";
@@ -25,17 +24,21 @@ function EditRecipe(props) {
     const [portions, setPortions] = React.useState(props.portions);
     const [instruction, setInstruction] = React.useState(props.instruction);
 
+
+
+
+
     const handleSubmit = () => {
 
         console.log('Submitting stuff!');
-        console.log(props.id);
         console.log(name);
         const url = API_BASE_URL + '/recipes/' + props.id;
 
+
         let data = JSON.stringify( {
             name: name,
-            cooking_time: cooking_time,
-            portions: portions,
+            cooking_time: parseInt(cooking_time),
+            portions: parseInt(portions),
             instruction: instruction
             /*            image: image,
                         ingredients: ingredients*/
@@ -53,6 +56,7 @@ function EditRecipe(props) {
             .then((response) => response.json())
             .then((data) => {
                     console.log('Success:', data);
+                 /*   return(<Message message="Resepti tallennettu onnistuneesti!"/>)*/
                 })
             .catch((error) => {
                 console.error('Error:', error);
@@ -105,7 +109,7 @@ function EditRecipe(props) {
                             >
                                 <input
                                     ref={cooking_timeRef}
-                                    type="text"
+                                    type="number"
                                     name={cooking_time}
                                     placeholder={props.cooking_time}
                                     value={cooking_time}
@@ -113,7 +117,7 @@ function EditRecipe(props) {
                                 />
                             </EditRecipeForm></td></tr>
                             <tr><td>Annoksia:</td><td> <EditRecipeForm
-                                text={portions}
+                                number={portions}
                                 placeholder={props.portions}
                                 childRef={portionsRef}
                                 type="input"
@@ -121,13 +125,16 @@ function EditRecipe(props) {
                             >
                                 <input
                                     ref={portionsRef}
-                                    type="text"
+                                    type="number"
                                     name={portions}
                                     placeholder={props.portions}
                                     value={portions}
                                     onChange={e => setPortions(e.target.value)}
                                 />
-                            </EditRecipeForm></td></tr>
+
+                            </EditRecipeForm></td></tr>{/*
+                            <Col>Ainesosat:</Col>
+                            <Table>{rows}</Table>*/}
                             <tr><td>Valmistusohjeet:</td><td> <EditRecipeForm
                                 text={instruction}
                                 placeholder={props.instruction}
@@ -144,26 +151,6 @@ function EditRecipe(props) {
                                     onChange={e => setInstruction(e.target.value)}
                                 />
                             </EditRecipeForm></td></tr>
-{/*                            <tr><td>Linkki:</td><td> <EditRecipeForm
-                                text={link}
-                                placeholder={props.link}
-                                childRef={linkRef}
-                                type="textarea"
-                                name="linkki"
-                            >
-                                <input
-                                    ref={linkRef}
-                                    name={link}
-                                    placeholder={props.link}
-                                    rows="10"
-                                    value={link}
-                                    onChange={e => setLink(e.target.value)}
-                                />
-                            </EditRecipeForm></td></tr>*/}
-
-{/*                            <tr><td>Valmistusaika:</td><td><EditRecipeForm id='cooking_time' value={props.cooking_time}/></td></tr>
-                            <tr><td>Annokset:</td><td><EditRecipeForm id='portions' value={props.portions}/></td></tr>
-                            <tr><td>Valmistusohjeet:</td><td><EditRecipeForm id='instruction' value={props.instruction}/></td></tr>*/}
                         </Table>
                     {/*</Col>*/}
                     <Col md="auto"><Image src={props.image} width={250}/></Col>

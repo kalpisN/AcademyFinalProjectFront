@@ -45,7 +45,7 @@ const EditRecipeForm = ({   childRef,
                         onClick={() => setEditing(true)}
                     >
           <span>
-            {text || placeholder || `Syötä reseptille ${props.name}`}
+            {text || placeholder || `Syötä ${props.name}`}
           </span>
                     </div>
                 )}
