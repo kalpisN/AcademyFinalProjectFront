@@ -10,6 +10,8 @@ import Grid from "@material-ui/core/Grid";
 import EditRecipeForm from "../FormHandling/EditRecipeForm";
 import Table from "react-bootstrap/Table";
 import {API_BASE_URL} from "../Helpers/API";
+import EditIngredients from "../FormHandling/EditIngredients";
+import Message from "../Helpers/Message";
 
 
 function EditRecipe(props) {
@@ -23,9 +25,6 @@ function EditRecipe(props) {
     const [cooking_time, setCookingTime] = React.useState(props.cooking_time);
     const [portions, setPortions] = React.useState(props.portions);
     const [instruction, setInstruction] = React.useState(props.instruction);
-
-
-
 
 
     const handleSubmit = () => {
@@ -43,24 +42,26 @@ function EditRecipe(props) {
             /*            image: image,
                         ingredients: ingredients*/
         });
-
         console.log(data);
+        const decoder = new TextDecoder('utf-8');
 
         fetch(url, {
             method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            statusCode: '',
             body: data,
         })
-            .then((response) => response.json())
-            .then((data) => {
-                    console.log('Success:', data);
-                 /*   return(<Message message="Resepti tallennettu onnistuneesti!"/>)*/
-                })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+            .then(response => {
+                response.body
+                    .getReader()
+                    .read()
+                    .then(({value, done}) => {
+                        if (decoder.decode(value) === 'Recipe Updated!') {
+                            console.log(decoder.decode(value));
+                            return(<Message message="Resepti tallennettu onnistuneesti!"/>)
+                        }
+                    })
+            })
+
     };
 
 
@@ -98,9 +99,11 @@ function EditRecipe(props) {
                         justify="center"
                         alignItems="flex-start"
                     >
+
                     {/*<Col sm={6}>*/}
-                        <Table col={{sm: 6}}>
-                            <tr><td>Valmistusaika:</td><td> <EditRecipeForm
+                        <Col col={{sm: 6}}>
+                            <Table>
+                            <tr><td><b>Valmistusaika:</b></td><td> <EditRecipeForm
                                 text={cooking_time}
                                 placeholder={props.cooking_time}
                                 childRef={cooking_timeRef}
@@ -115,8 +118,8 @@ function EditRecipe(props) {
                                     value={cooking_time}
                                     onChange={e => setCookingTime(e.target.value)}
                                 />
-                            </EditRecipeForm></td></tr>
-                            <tr><td>Annoksia:</td><td> <EditRecipeForm
+                            </EditRecipeForm></td><td>minuuttia</td></tr>
+                            <tr><td><b>Annoksia:</b></td><td> <EditRecipeForm
                                 number={portions}
                                 placeholder={props.portions}
                                 childRef={portionsRef}
@@ -131,17 +134,16 @@ function EditRecipe(props) {
                                     value={portions}
                                     onChange={e => setPortions(e.target.value)}
                                 />
-
-                            </EditRecipeForm></td></tr>{/*
-                            <Col>Ainesosat:</Col>
-                            <Table>{rows}</Table>*/}
-                            <tr><td>Valmistusohjeet:</td><td> <EditRecipeForm
-                                text={instruction}
-                                placeholder={props.instruction}
-                                childRef={instructionRef}
-                                type="textarea"
-                                name="valmistusohjeet"
-                            >
+                            </EditRecipeForm></td><td>annosta</td></tr>
+                            </Table>
+                                <Col><b>Valmistusohjeet:</b></Col>
+                                <Col className="instructions"><EditRecipeForm
+                                    text={instruction}
+                                    placeholder={props.instruction}
+                                    childRef={instructionRef}
+                                    type="textarea"
+                                    name="valmistusohjeet"
+                                >
                                 <textarea
                                     ref={instructionRef}
                                     name={instruction}
@@ -150,10 +152,17 @@ function EditRecipe(props) {
                                     value={instruction}
                                     onChange={e => setInstruction(e.target.value)}
                                 />
-                            </EditRecipeForm></td></tr>
-                        </Table>
+                                </EditRecipeForm></Col>
+
+
+
+
+                        </Col>
+                            <Col md="auto"><Image src={props.image} width={250}/></Col>
+                            <EditIngredients name={props.name}/>
+
                     {/*</Col>*/}
-                    <Col md="auto"><Image src={props.image} width={250}/></Col>
+
                     </Grid>
                 </Modal.Body>
                 <Modal.Footer>
