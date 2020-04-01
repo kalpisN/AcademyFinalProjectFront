@@ -50,7 +50,7 @@ class Ingredient extends Component {
             }
             // {} -> { 1: true }
             return update(prevState, {
-                selections: { [id]: { $set: true } },
+                selections: { [id]: { $set: true }},
             });
         },this.giveData);
        console.log("state päivitetty")
@@ -90,7 +90,9 @@ class Ingredient extends Component {
                 <Table>
                     <tr><th>Ainesosa</th><th>Määrä</th><th>Yksikkö</th></tr>{
                     this.state.ingredients.map(ingredient =>
+
                         <tr key={ingredient.id}><td>{ingredient.name}</td><td>{ingredient.amount}</td><td>{ingredient.unit}</td><td><Checkbox checked={this.isItemSelected(ingredient.id)} onClick={()=> this.handleSelect(ingredient.id)}/></td></tr>
+
                     )}</Table>
                 }
 

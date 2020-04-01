@@ -93,11 +93,16 @@ class NewRecipe extends Component {
                     this.setState({message: message});
                     this.toggleHidden();
                 } else {
-                    message = 'HUPS! Jotain meni vikaan!';
+                    message = 'HUPS! Jotain meni vikaan eikä reseptiä lisätty!';
                     this.setState({message: message});
                     this.toggleHidden();
 
                 }
+            })
+            .catch(err => {
+                message= 'HUPS! Jotain meni vikaan eikä reseptiä lisätty!';
+                this.setState({message: message});
+                this.toggleHidden();
             })
         console.log(message)
         console.log("post action complete")
