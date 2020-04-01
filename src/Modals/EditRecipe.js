@@ -61,11 +61,7 @@ function EditRecipe(props) {
                         }
                     })
             })
-
     };
-
-
-
     return (
         <Modal
             {...props}

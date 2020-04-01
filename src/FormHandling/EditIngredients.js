@@ -8,15 +8,17 @@ import Table from "react-bootstrap/Table";
 
 const EditIngredients = (props) => {
 
-    const [ingredientDelete, setIngredientDelete] = React.useState('');
+    /*const [ingredientDelete, setIngredientDelete] = React.useState('');*/
     const [name, setName] = React.useState('');
-    const nameRef = useRef();
+/*    const nameRef = useRef();*/
     const [amount, setAmount] = React.useState('');
-    const amountRef = useRef();
+/*    const amountRef = useRef();*/
     const [unit, setUnit] = React.useState('');
-    const unitRef = useRef();
+/*    const unitRef = useRef();*/
     const [id, setId] = React.useState('');
-    const idRef = useRef();
+/*    const idRef = useRef();*/
+    const [ingredient, setIngredient] = React.useState();
+    const ingredientRef = useRef();
 
 
     const url = API_BASE_URL + '/ingredientsByRecipe/' + props.name;
@@ -35,16 +37,16 @@ const EditIngredients = (props) => {
     console.log('render', ingredients.length, 'ingredients');
 
 
-    const handleDelete = (props) => {
+    const handleDelete = (event) => {
 
-        console.log(props);
-        const url = API_BASE_URL + '/ingredients/' + props;
+        console.log(event.id);
+        const url = API_BASE_URL + '/ingredients/' + event.id;
 
         fetch(url, {
             method: 'DELETE'
         }).then(r => r.json());
 
-        console.log(props + ' poistettu')
+        console.log(event.id + ' poistettu')
     };
 
     const ingredientRows =
@@ -53,12 +55,12 @@ const EditIngredients = (props) => {
             <tr id={ingredient.id}><td>
             <EditRecipeForm text={ingredient.name}
                             placeholder={ingredient.name}
-                            childRef={nameRef}
+                            childRef={ingredientRef}
                             type="input"
                             name="nimi"
             >
                 <input
-                    ref={nameRef}
+                    ref={ingredientRef}
                     type="text"
                     name={name}
                     placeholder={ingredient.name}
@@ -70,12 +72,12 @@ const EditIngredients = (props) => {
                 <td>
                     <EditRecipeForm text={ingredient.amount}
                                     placeholder={ingredient.amount}
-                                    childRef={amountRef}
+                                    childRef={ingredientRef}
                                     type="input"
                                     name="määrä"
                     >
                         <input
-                            ref={nameRef}
+                            ref={ingredientRef}
                             type="text"
                             name={amount}
                             placeholder={ingredient.amount}
@@ -87,12 +89,12 @@ const EditIngredients = (props) => {
                 <td>
                     <EditRecipeForm text={ingredient.unit}
                                     placeholder={ingredient.unit}
-                                    childRef={unitRef}
+                                    childRef={ingredientRef}
                                     type="input"
                                     name="nimi"
                     >
                         <input
-                            ref={unitRef}
+                            ref={ingredientRef}
                             type="text"
                             name={unit}
                             placeholder={ingredient.unit}
@@ -101,7 +103,7 @@ const EditIngredients = (props) => {
                         />
                     </EditRecipeForm>
                 </td>
-                <td><Button id={ingredient.id} variant="light" onClick={handleDelete(id)}><ClearIcon/></Button></td>
+                <td><Button id={ingredient.id} onClick={e => setId(e.target.id)} variant="light" onClick={handleDelete}><ClearIcon id={ingredient.id}/></Button></td>
             </tr>
         );
 
