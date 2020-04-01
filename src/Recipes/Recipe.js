@@ -6,12 +6,29 @@ import EditSharpIcon from '@material-ui/icons/EditSharp';
 import VisibilitySharpIcon from '@material-ui/icons/VisibilitySharp';
 import ShowRecipeDetails from "../Modals/ShowRecipeDetails";
 import Button from "react-bootstrap/Button";
+import {API_BASE_URL} from "../Helpers/API";
 
 
 function Recipe(props) {
 
+    const [ingredients, setIngredients] = React.useState([])
     const [recipeModalShow, setRecipeModalShow] = React.useState(false);
     const [editModalShow, setEditModalShow] = React.useState(false);
+
+    if (editModalShow === true) {
+        const url = API_BASE_URL + '/ingredientsByRecipe/' + props.name;
+
+        fetch(url, {
+            method: 'GET',
+
+        })
+            .then(response => response.json())
+            .then(response => {
+                console.log(response.data);
+                setIngredients(response.data)
+            })
+
+        }
 
         return (
             <Card>
@@ -43,6 +60,7 @@ function Recipe(props) {
                     cooking_time={props.cooking_time}
                     portions={props.portions}
                     instruction={props.instruction}
+                    ingredients={ingredients}
                     show={editModalShow}
                     onHide={() => setEditModalShow(false)}
                 />

@@ -18,7 +18,7 @@ const EditRecipeForm = ({   childRef,
     }, [isEditing, childRef]);
 
 
-    const handleKeyDown = (event, type) => {
+    const handleKeyDown = (event) => {
         const {key} = event;
         const keys = ["Escape", "Tab"];
         const enterKey = "Enter";
@@ -45,7 +45,7 @@ const EditRecipeForm = ({   childRef,
                         onClick={() => setEditing(true)}
                     >
           <span>
-            {text || placeholder || `Syötä reseptille ${props.name}`}
+            {text || placeholder || `Syötä ${props.name}`}
           </span>
                     </div>
                 )}
@@ -55,64 +55,3 @@ const EditRecipeForm = ({   childRef,
 
 
 export default EditRecipeForm
-    /*const StyledEdiText = styled(EdiText)`
-        button {
-        border-style: hidden;
-        position: right;
-        background-color: #fff;
-
-      }
-      button[editext="edit-button"] {
-        color: #000;
-        width: 10px;
-      }
-      button[editext="save-button"] {
-        width: 50px;
-        &:hover {
-          background: greenyellow;
-        }
-      }
-      button[editext="cancel-button"] {
-        &:hover {
-          background: crimson;
-          color: #fff;
-        }
-
-      input, textarea {
-        border-radius: 5px;
-      }
-      div[editext="view-container"], div[editext="edit-container"] {
-        padding: 15px;
-        border-radius: 5px;
-        color: black;
-    }
-    `
-    export default class EditRecipeForm extends Component {
-        constructor(props) {
-            super(props);
-
-        }
-
-
-        onSave = val => {
-            console.log('Edited Value -> ', val)
-            console.log(this.props.id)
-        }
-
-        render () {
-            return (
-                <StyledEdiText
-                    title={this.props.title}
-                    id={this.props.id}
-                    type='text'
-                    value={this.props.value}
-                    onSave={this.onSave}
-                    editOnViewClick={true}
-                    hideIcons={true}
-                    /!*validation={val => val.length >= 20}*!/
-    /!*                saveButtonContent='Tallenna'
-                    cancelButtonContent='Peruuta'*!/
-                />
-            )
-        }*/
-

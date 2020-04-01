@@ -5,19 +5,71 @@ import Modal from "react-bootstrap/Modal";
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Col from "react-bootstrap/Col";
 import Ingredient from "../Ingredients/Ingredient";
+import {API_BASE_URL} from "../Helpers/API";
+import axios from "axios";
+import Message from "../Helpers/Message";
 
 
 class ShowRecipeDetails extends Component {
     constructor(props) {
         super(props);
         this.state={
-            selectedItems: ''
+            selectedItems: [],
+            message: '',
+            isHidden:true,
         }
     }
 
-    myCallback = (data) =>{
-        this.setState({selectedItems: data})
+    myCallback = (data) => {
+        //this.setState({selectedItems: data})
+
+        console.log(Object.keys(this.state.selectedItems))
+        this.setState({selectedItems: (Object.keys(data))})
+        console.log("tässä se mitä tuli tallennettua")
+        console.log(this.state.selectedItems)
     }
+
+    saveItems = (event) => {
+        console.log(this.state.selectedItems)
+        console.log("Aloitetaan tallennus!")
+
+           let message = 'Tämä on defaultviesti';
+            event.preventDefault();
+            const url = API_BASE_URL + '/shoppingList'
+
+            const data = JSON.stringify({selected: this.state.selectedItems})
+            console.log(data)
+            axios.post(url, data)
+                .then(res => {
+                    console.log(res);
+                    console.log(res.status);
+                    if (res.status === 200) {
+                        message = 'Ainesosa lisätty onnistuneesti kauppalistaan';
+                        this.setState({message: message});
+                        this.toggleHidden();
+                    } else {
+                        message = 'HUPS! Jotain meni vikaan eivätkä ainesosat tallentuneet!!';
+                        this.setState({message: message});
+                        this.toggleHidden();
+
+                    }
+                })
+                .catch(err => {
+                    message= 'HUPS! Jotain meni vikaan eivätkä ainesosat tallentuneet!';
+                    this.setState({message: message});
+                    this.toggleHidden();
+                })
+
+            console.log(message)
+            console.log("post action complete")
+
+
+        }
+
+    toggleHidden(){
+        this.setState({isHidden: !this.state.isHidden})
+    }
+d
 
     render() {
         return (
@@ -35,11 +87,12 @@ class ShowRecipeDetails extends Component {
                 <Modal.Body>
                     <Col>Valmistusaika: {this.props.cooking_time}</Col>
                     <Col>Annokset: {this.props.portions}</Col>
-                    <Col>Ainekset:<Ingredient name={this.props.name} callbackFromParent={this.myCallback}/></Col>
+                    <Col><Ingredient name={this.props.name} callbackFromParent={this.myCallback}/></Col>
                     <Col>Valmistusohje: {this.props.instruction}</Col>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="light"><AddShoppingCartIcon/></Button>
+                    {!this.state.isHidden && <Message message={this.state.message}/>}
+                    <Button variant="light" onClick={this.saveItems}><AddShoppingCartIcon/></Button>
                     <Button onClick={this.props.onHide}>Close</Button>
                 </Modal.Footer>
             </Modal>
