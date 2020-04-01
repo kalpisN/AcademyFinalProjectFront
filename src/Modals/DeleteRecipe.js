@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 function DeleteRecipe(props) {
 
     const [RecipeDelete, setRecipeDelete] = React.useState(false);
-/*    const [isDeleted, setIsDeleted] = React.useState(false);*/
+
 
     if (RecipeDelete === true) {
         console.log('täällä sitä poistetaan reseptiä!')
@@ -16,14 +16,10 @@ function DeleteRecipe(props) {
             method: 'DELETE'
         }).then(r => r.json());
 
-/*        setIsDeleted(true);*/
+
         console.log(props.id + 'poistettu')
     }
 
-
-/*        if (isDeleted === true) {
-            return (props.onHide);
-        }*/
 
     return(
         <Modal
