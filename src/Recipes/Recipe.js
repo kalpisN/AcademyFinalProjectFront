@@ -48,6 +48,7 @@ function Recipe(props) {
                     id={props.id}
                     name={props.name}
                     cooking_time={props.cooking_time}
+                    image={props.image}
                     portions={props.portions}
                     instruction={props.instruction}
                     show={recipeModalShow}
