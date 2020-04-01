@@ -9,6 +9,14 @@
       <change beforePath="$PROJECT_DIR$/src/Helpers/Message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/Message.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ingredients/Ingredient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ingredients/Ingredient.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modals/ShowRecipeDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/ShowRecipeDetails.js" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/src/ShoppingList/ShoppingList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoppingList/ShoppingList.js" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/src/FormHandling/EditRecipeForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormHandling/EditRecipeForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modals/EditRecipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/EditRecipe.js" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/src/Recipes/Recipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipes/Recipe.js" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +134,7 @@
       <workItem from="1585382663427" duration="12057000" />
       <workItem from="1585426425128" duration="11956000" />
       <workItem from="1585440091487" duration="1417000" />
+      <workItem from="1585634983824" duration="12038000" />
     </task>
     <servers />
   </component>
