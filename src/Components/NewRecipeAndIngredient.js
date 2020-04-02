@@ -7,7 +7,7 @@ class NewRecipeAndIngredient extends Component {
         return (
             <div className="new-recipe-heading">
                 <hr/>
-                <p className="heading">Lisää uusi resepti täällä!</p>
+                <h1 className="shoppinglist-heading">Lisää uusi resepti täällä!</h1>
                 <p> Muista täyttää kaikki pakolliset (*) kentät.</p>
                 <NewRecipe/>
 

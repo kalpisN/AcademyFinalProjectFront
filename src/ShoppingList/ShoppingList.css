@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Knewave&display=swap');
 .flex-container {
     display: flex;
     flex-flow: row wrap;
@@ -18,11 +19,7 @@
     text-align: right;
 }
 
-h1{
-    padding: 50px;
-    margin-left: 40%;
 
-}
 h3{
     margin-left: 40px;
     padding-bottom: 30px;
@@ -42,3 +39,6 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     horiz-align: center;
 }
 
+.new-items {
+    font-family: 'Knewave', cursive;
+}

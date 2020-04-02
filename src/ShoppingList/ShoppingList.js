@@ -98,15 +98,16 @@ const ShoppingList =()=> {
             <td>{item.name}</td>
             <td>{item.amount}</td>
             <td>{item.unit}</td>
-            <td><Button onClick={()=>deleteItem(item)}><img className='trashIcon' src={trashIcon}/></Button></td>
+            <td><Button variant="light" onClick={()=>deleteItem(item)}><img className='trashIcon' src={trashIcon}/></Button></td>
         </tr>
     )
 
         return (
             <div>
+            <hr/>
             <div className='flex-container'>
                 <Table id='table'>
-                    <tr><h1>Kauppalista</h1></tr>
+                    <tr><h1 className={'shoppinglist-heading'}>Kauppalista</h1></tr>
                     <tr>
                         <th>Ainesosa</th>
                         <th>Määrä</th>
@@ -116,7 +117,7 @@ const ShoppingList =()=> {
                     {shoppingListRows}</Table>
                 <div className='addItemForm'>
                     <Form onSubmit={handleSubmit}>
-                        <h3>Lisää tuotteita kauppalistaan:</h3>
+                        <h3 className="new-items">Lisää tuotteita kauppalistaan:</h3>
 
                         <Form.Group as={Row}>
                             <Form.Label column sm={2}>
@@ -144,7 +145,7 @@ const ShoppingList =()=> {
                         </Form.Group>
                         <Form.Group as={Row}>
                             <Col sm={{span: 10, offset: 2}}>
-                                <Button type="submit">Lisää kauppalistaan</Button>
+                                <Button variant="dark" type="submit">Lisää kauppalistaan</Button>
                             </Col>
                         </Form.Group>
                     </Form>

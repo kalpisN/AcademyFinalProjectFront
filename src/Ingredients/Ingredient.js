@@ -91,7 +91,7 @@ class Ingredient extends Component {
                     <tr><th>Ainesosa</th><th>Määrä</th><th>Yksikkö</th></tr>{
                     this.state.ingredients.map(ingredient =>
 
-                        <tr key={ingredient.id}><td>{ingredient.name}</td><td>{ingredient.amount}</td><td>{ingredient.unit}</td><td><Checkbox color="default" checked={this.isItemSelected(ingredient.id)} onClick={()=> this.handleSelect(ingredient.id)}/></td></tr>
+                        <tr key={ingredient.id}><td>{ingredient.name}</td><td>{ingredient.amount}</td><td>{ingredient.unit}</td><td><Checkbox color="default" checked={this.isItemSelected(ingredient.name)} onClick={()=> this.handleSelect(ingredient.name)}/></td></tr>
 
                     )}</Table>
                 }
