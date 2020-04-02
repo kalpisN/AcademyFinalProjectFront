@@ -1,0 +1,44 @@
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0 40px;
+    justify-content: center;
+
+}
+
+#table  {
+    width: 40%;
+}
+.addItemForm{
+    margin-left: 50px;
+
+}
+
+.checkBoxCol{
+    text-align: right;
+}
+
+h1{
+    padding: 50px;
+    margin-left: 40%;
+
+}
+h3{
+    margin-left: 40px;
+    padding-bottom: 30px;
+    padding-top: 100px;
+
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+.trashIcon {
+    width: 20px;
+    margin: 8px;
+}
+
+
+#tableHeading{
+    text-align: center;
+    horiz-align: center;
+}
+

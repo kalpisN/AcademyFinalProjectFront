@@ -62,7 +62,7 @@ class ImageUpload extends Component {
     render() {
         const ThumbImage = () =>(
             <div style={{paddingTop:20,paddingBottom:30}}>
-                <img style={{width:'70px'}} src={this.state.url} alt="recipeImage"/>
+                <img style={{width:'100px'}} src={this.state.url} alt="recipeImage"/>
                 <br/>
             </div>
         )
