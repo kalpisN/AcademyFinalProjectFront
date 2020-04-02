@@ -8,8 +8,8 @@
   font-family: 'Knewave', cursive;
   color: black;
   font-size: xx-large;
-
 }
+
 hr {
   border: none;
   height: 10px;
@@ -63,8 +63,12 @@ hr {
 .heading {
   font-family: 'Knewave', cursive;
   color: black;
-  font-size: large;
+  font-size: xx-large;
 
+}
+
+.shoppinglist-heading{
+  font-family: 'Knewave', cursive;
 }
 
 .hide-this {
@@ -106,6 +110,8 @@ hr {
 .link {
   float: right ;
   text-decoration: none;
+  font-family: 'Knewave', cursive, bold;
+  font-size: large;
 }
 
 .link a {
@@ -123,7 +129,10 @@ hr {
   text-decoration: none;
 }
 
+.newRecipeForm{
+  margin-left: 50px;
 
+}
 
 
 .newIngredientForm {
