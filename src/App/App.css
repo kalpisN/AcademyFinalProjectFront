@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Knewave&display=swap');
+
 .App {
   text-align: center;
 }
@@ -13,10 +14,10 @@
 hr {
   border: none;
   height: 10px;
-  /* Set the hr color */
-  color: #333; /* old IE */
-  background-color: #333; /* Modern Browsers */
+  color: #333;
+  background-color: #333;
 }
+
 .welcome-subtext{
   font-size: large;
   font-style: italic;
@@ -26,30 +27,6 @@ hr {
   background-color: white;
 }
 
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .searchBar {
   margin-top: 10px;
@@ -80,16 +57,12 @@ hr {
   margin-left: 10px;
 
 }
-.router {
-  background-color: #73A788;
-}
+
 .navBar {
   text-align: center;
   list-style-type: none;
   margin: 0;
   padding: 0;
-
-
 }
 
 .card-title {
@@ -101,11 +74,10 @@ hr {
 }
 
 
-
 .list {
   list-style-type: none;
-
 }
+
 
 .link {
   float: right ;
@@ -120,7 +92,6 @@ hr {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-
 }
 
 .link a:hover {
@@ -131,12 +102,9 @@ hr {
 
 .newRecipeForm{
   margin-left: 50px;
-
 }
-
 
 .newIngredientForm {
   padding: 50px 60px;
-
 }
 
