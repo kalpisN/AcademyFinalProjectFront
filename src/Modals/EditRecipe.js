@@ -11,9 +11,6 @@ import EditRecipeForm from "../FormHandling/EditRecipeForm";
 import Table from "react-bootstrap/Table";
 import {API_BASE_URL} from "../Helpers/API";
 import EditIngredients from "../FormHandling/EditIngredients";
-import Message from "../Helpers/Message";
-
-
 
 function EditRecipe(props) {
 
@@ -26,7 +23,7 @@ function EditRecipe(props) {
     const [cooking_time, setCookingTime] = React.useState(props.cooking_time);
     const [portions, setPortions] = React.useState(props.portions);
     const [instruction, setInstruction] = React.useState(props.instruction);
-
+    const [reload, setReload] = React.useState(false);
 
     const handleSubmit = () => {
 
@@ -58,12 +55,12 @@ function EditRecipe(props) {
                     .then(({value, done}) => {
                         if (decoder.decode(value) === 'Recipe Updated!') {
                             console.log(decoder.decode(value));
-                            return (<Message message="Resepti tallennettu onnistuneesti!"/>)
+                           /* return (<Message message="Resepti tallennettu onnistuneesti!"/>)*/
                         }
                     })
             })
-
     };
+
     return (
         <Modal
             {...props}
@@ -151,16 +148,9 @@ function EditRecipe(props) {
                                     onChange={e => setInstruction(e.target.value)}
                                 />
                                 </EditRecipeForm></Col>
-
-
-
-
                         </Col>
                             <Col md="auto"><Image src={props.image} width={250}/></Col>
-                            <EditIngredients name={props.name}/>
-
-                    {/*</Col>*/}
-
+                            <EditIngredients reload={reload} setReload={setReload} name={props.name}/>
                     </Grid>
                 </Modal.Body>
                 <Modal.Footer>
