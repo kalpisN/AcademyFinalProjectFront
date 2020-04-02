@@ -1,4 +1,4 @@
-
+import "./Search.css"
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import AllRecipes from "./AllRecipes";
