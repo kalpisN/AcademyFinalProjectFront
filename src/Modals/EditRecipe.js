@@ -57,10 +57,11 @@ function EditRecipe(props) {
                     .then(({value, done}) => {
                         if (decoder.decode(value) === 'Recipe Updated!') {
                             console.log(decoder.decode(value));
-                            return(<Message message="Resepti tallennettu onnistuneesti!"/>)
+                            return (<Message message="Resepti tallennettu onnistuneesti!"/>)
                         }
                     })
             })
+
     };
     return (
         <Modal
@@ -162,9 +163,9 @@ function EditRecipe(props) {
                     </Grid>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="light" onClick={handleSubmit}>Tallenna</Button>
-                    <Button variant="light" onClick={() => setDeleteModalShow(true)}><DeleteForeverIcon/></Button>
-                    <Button onClick={props.onHide}>Close</Button>
+                    <Button variant="dark" onClick={handleSubmit}>Tallenna</Button>
+                    <Button variant="dark" onClick={() => setDeleteModalShow(true)}><DeleteForeverIcon/></Button>
+                    <Button variant="dark" onClick={props.onHide}>Close</Button>
                 </Modal.Footer>
             <DeleteRecipe
                 id={props.id}

@@ -5,9 +5,10 @@ import NewIngredient from "../FormHandling/NewIngredient";
 class NewRecipeAndIngredient extends Component {
     render() {
         return (
-            <div>
-                <h1>Täällä voit lisätä uusia reseptejä ja niiden ainesosia</h1>
+            <div className="new-recipe-heading">
                 <hr/>
+                <p className="heading">Lisää uusi resepti täällä!</p>
+                <p> Muista täyttää kaikki pakolliset (*) kentät.</p>
                 <NewRecipe/>
 
             </div>

@@ -1,19 +1,29 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Knewave&display=swap');
 .App {
   text-align: center;
 }
 
 .Welcome {
   text-align: center;
-  font-family: 'Lato', sans-serif;
-  color: black
+  font-family: 'Knewave', cursive;
+  color: black;
+  font-size: xx-large;
+
+}
+hr {
+  border: none;
+  height: 10px;
+  /* Set the hr color */
+  color: #333; /* old IE */
+  background-color: #333; /* Modern Browsers */
+}
+.welcome-subtext{
+  font-size: large;
+  font-style: italic;
 }
 
-
 .background-of-everything {
-  background-image: linear-gradient(#73A788, #478966, #135E46)
+  background-color: white;
 }
 
 
@@ -41,19 +51,49 @@
   }
 }
 
-.Searchbar {
-  background-color: black;
+.searchBar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
   color: white;
 
 }
 
+.heading {
+  font-family: 'Knewave', cursive;
+  color: black;
+  font-size: large;
 
+}
+
+.hide-this {
+  display: none;
+  visibility: hidden;
+}
+.new-recipe-heading {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+
+}
+.router {
+  background-color: #73A788;
+}
 .navBar {
   text-align: center;
   list-style-type: none;
   margin: 0;
   padding: 0;
 
+
+}
+
+.card-title {
+  font-family: 'Knewave', cursive;
+}
+
+.modal-title {
+  font-family: 'Knewave', cursive;
 }
 
 
@@ -78,27 +118,16 @@
 }
 
 .link a:hover {
-  background-color:#C7DCCF ;
-  color: black;
+  background-color:black ;
+  color: white;
   text-decoration: none;
 }
 
-.newRecipeForm {
 
 
-}
 
 .newIngredientForm {
   padding: 50px 60px;
 
 }
 
-.heading {
-  font-family: 'Lato', sans-serif;
-  color: black
-
-}
-
-.Allrecipes {
-
-}

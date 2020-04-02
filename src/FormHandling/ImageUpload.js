@@ -69,9 +69,9 @@ class ImageUpload extends Component {
         return (
             <div>
                 {this.state.success ? <ThumbImage/> : null}
-                <input onChange={this.handleChange} ref={(ref) => { this.uploadInput = ref; }} type="file"/>
+                <input className={"button-variant:dark"} onChange={this.handleChange} ref={(ref) => { this.uploadInput = ref; }} type="file"/>
                 <br/>
-                <Button style={{marginTop: 15,marginBottom:15}} onClick={this.handleUpload}>Lataa</Button>
+                <Button variant="dark" style={{marginTop: 15,marginBottom:15}} onClick={this.handleUpload}>Lataa</Button>
             </div>
         );
     }

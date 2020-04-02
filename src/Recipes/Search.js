@@ -34,8 +34,8 @@ function Search() {
             <div className={"Allrecipes"}>
                 <hr/>
                 <div className={'searchBar'}>
-                    <div className={'heading'}>Hae reseptiä</div>
-                    <input className='searchInput' placeholder='Kirjoita reseptin nimi...' value={filter} onChange={handlefilterChange}/>
+                    <div className={'heading'}>
+                        <p>Hae reseptiä</p></div><input className='searchInput' placeholder='Kirjoita reseptin nimi...' value={filter} onChange={handlefilterChange}/>
                 </div>
                 <div><AllRecipes recipes={recipes} filter={filter} setFilter={setFilter}/></div>
             </div>
