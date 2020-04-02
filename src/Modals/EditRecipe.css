@@ -1,10 +1,7 @@
-.Table .tr {
-    margin: 0;
-    padding: 0;
-    max-width: 50%;
-
-}
-.Table .td {
-    margin: 0;
-    padding: 0;
+.instructions {
+    
+    min-width: 350px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
 }

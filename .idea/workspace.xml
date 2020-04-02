@@ -5,7 +5,18 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FormHandling/ImageUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormHandling/ImageUpload.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShoppingList/ShoppingList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoppingList/ShoppingList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Recipes/Recipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipes/Recipe.js" afterDir="false" />
+
+
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nav/Navibar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nav/Navibar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Recipes/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipes/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShoppingList/ShoppingList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoppingList/ShoppingList.js" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +140,9 @@
       <workItem from="1585645641451" duration="15308000" />
       <workItem from="1585634983824" duration="12038000" />
       <workItem from="1585731662391" duration="56170000" />
+      <workItem from="1585729757367" duration="2473000" />
+
+      <workItem from="1585731662391" duration="593000" />
     </task>
     <servers />
   </component>
@@ -141,6 +155,54 @@
     </state>
     <state x="692" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1584960070350" />
     <state x="932" y="176" key="FileChooserDialogImpl" timestamp="1585808580609">
+    <state x="679" y="155" width="830" height="487" key="FileChooserDialogImpl" timestamp="1585566657264">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="679" y="155" width="830" height="487" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585566657264" />
+    <state width="956" height="71" key="GridCell.Tab.0.bottom" timestamp="1585732799754">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="956" height="71" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585732799754" />
+    <state width="956" height="71" key="GridCell.Tab.0.center" timestamp="1585732799753">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="956" height="71" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585732799753" />
+    <state width="956" height="71" key="GridCell.Tab.0.left" timestamp="1585732799753">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="956" height="71" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585732799753" />
+    <state width="956" height="71" key="GridCell.Tab.0.right" timestamp="1585732799753">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="956" height="71" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585732799753" />
+    <state x="520" y="123" key="RollbackChangesDialog" timestamp="1585565089811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="520" y="123" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585565089811" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1585573037663">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1585573037663" />
+    <state x="0" y="0" width="504" height="794" key="dock-window-1" timestamp="1585486975817">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="0" width="504" height="794" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1585486975817" />
+    <state x="0" y="0" width="599" height="830" key="dock-window-2" timestamp="1585311398710">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="0" width="599" height="830" key="dock-window-2/0.0.1536.824@0.0.1536.824" timestamp="1585311398710" />
+    <state x="398" y="0" width="740" height="824" key="find.popup" timestamp="1585596440499">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="398" y="0" width="740" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1585596440499" />
+    <state x="241" y="156" key="new project wizard" timestamp="1585039299462">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="241" y="156" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1585039299462" />
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585475917246">
+      <screen x="0" y="0" width="1536" height="824" />
+
+    <state x="932" y="176" key="FileChooserDialogImpl" timestamp="1585648955113">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="932" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585039765898" />
