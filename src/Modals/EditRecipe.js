@@ -26,13 +26,11 @@ function EditRecipe(props) {
     const [portions, setPortions] = React.useState(props.portions);
     const [instruction, setInstruction] = React.useState(props.instruction);
     const [reload, setReload] = React.useState(false);
+    const [message, setMessage] = useState("")
 
     const handleSubmit = () => {
 
-        console.log('Submitting stuff!');
-        console.log(name);
         const url = API_BASE_URL + '/recipes/' + props.id;
-
 
         let data = JSON.stringify( {
             name: name,
@@ -56,9 +54,13 @@ function EditRecipe(props) {
                     .read()
                     .then(({value, done}) => {
                         if (decoder.decode(value) === 'Recipe Updated!') {
-                            console.log(decoder.decode(value));
+                            setMessage("Resepti päivitetty onnistuneesti!")
                            /* return (<Message message="Resepti tallennettu onnistuneesti!"/>)*/
                         }
+                        else {
+                            setMessage("HUPS! Jotain meni vikaan eikä reseptin päivittäminen onnistunut!")
+                        }
+
                     })
             })
     };
@@ -164,7 +166,7 @@ function EditRecipe(props) {
                 show={deleteModalShow}
                 onHide={() => setDeleteModalShow(false)}
             />
-
+            <Message message={message}/>
         </Modal>
     );
 }
