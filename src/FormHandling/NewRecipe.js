@@ -228,7 +228,7 @@ class NewRecipe extends Component {
                                             </Form.Group>
                                             <Form.Group as={Row}>
                                                 <Form.Label column sm={2}>
-                                                    Yksikkö
+                                                    Yksikkö:
                                                 </Form.Label>
                                                 <Col sm={10}>
                                                     <Form.Control as="select"  name={ingredientunit} data-id={idx} id={ingredientunit} value={ingredients[idx].unit} bsPrefix="unit" onChange={this.handleChange}>
