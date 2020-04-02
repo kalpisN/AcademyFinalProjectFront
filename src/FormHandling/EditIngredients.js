@@ -170,8 +170,4 @@ const EditIngredients = (props) => {
         )
 
 }
-
 export default EditIngredients
-
-
-
