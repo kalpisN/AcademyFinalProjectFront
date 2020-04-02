@@ -1,27 +1,24 @@
-import React, { Component } from 'react';
+import React, {useState,useRef} from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
+import Col from "react-bootstrap/Col";
+import Image from "react-bootstrap/Image";
 
 
-class ImageUpload extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            success : false,
-            url : "",
-            fileSelected:false
-        }
+const ImageUploadFunction =(props)=> {
+    const [success,setSuccess]=useState(false)
+    const [fileSelected,setFileSelected]=useState(false)
+    const refContainer = useRef(null);
+
+    const handleChange = (ev) => {
+        setFileSelected(true)
     }
 
-    handleChange = (ev) => {
-        this.setState({success: false, url : "",fileSelected:true});
+    const handleUpload = (event) => {
 
-    }
-
-    handleUpload = (ev) => {
-
-        const file = this.uploadInput.files[0];
-        const fileParts = this.uploadInput.files[0].name.split('.');
+        const file = refContainer.current.files[0];
+        console.log('file, ',refContainer.current.files[0])
+        const fileParts = file.name.split('.');
         const fileType = fileParts[1];
         console.log("Preparing the upload");
         axios.post("https://uk5p4uqkgi.execute-api.eu-west-1.amazonaws.com/dev/requestUploadURL",{
@@ -34,7 +31,7 @@ class ImageUpload extends Component {
                 console.log(returnData)
                 const dataParts = signedRequest.split('?');
                 const url = dataParts[0]
-                this.setState({url: url})
+                props.setImage(url)
                 console.log("Recieved a signed request " + signedRequest);
                 const options = {
                     headers: {
@@ -45,8 +42,7 @@ class ImageUpload extends Component {
                 axios.put(signedRequest,file,options)
                     .then(result => {
                         console.log("Upload completed")
-                        this.setState({success: true});
-                        this.someFunction();
+                        setSuccess(true)
                     })
                     .catch(error => {
                         alert("ERROR " + JSON.stringify(error));
@@ -57,28 +53,19 @@ class ImageUpload extends Component {
             })
     }
 
-    someFunction=()=>{
-        this.props.callbacFromParent(this.state.url)
-    }
-    render() {
         const ThumbImage = () =>(
-            <div style={{paddingTop:20,paddingBottom:30}}>
-                <img style={{width:'100px'}} src={this.state.url} alt="recipeImage"/>
-                <br/>
-            </div>
+                <Col md="auto"><Image src={props.image} width={250}/></Col>
         )
         return (
             <div>
-                {this.state.success ? <ThumbImage/> : null}
-                <input className={"button-variant:dark"}
-                                                  onChange={this.handleChange}
-                                                  ref={(ref) => { this.uploadInput = ref; }} type="file"/>
+                {success? <ThumbImage/>:<Col md="auto"><Image src={props.image} width={250}/></Col>}
+                <input type="file"className={"button-variant:dark"} onChange={handleChange} ref={refContainer}/>
                 <br/>
-                {this.state.fileSelected ? <Button variant="dark"
+                {fileSelected ? <Button variant="dark"
                                                    style={{marginTop: 15,marginBottom:15}}
-                                                   onClick={this.handleUpload}>Lataa</Button> : null}
+                                                   onClick={handleUpload}>Lataa</Button> : null}
             </div>
         );
     }
-}
-export default ImageUpload;
+
+export default ImageUploadFunction;
