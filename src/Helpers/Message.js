@@ -8,7 +8,7 @@ class Message extends Component {
     render() {
         return (
             <div>
-                <Alert variant='primary'>{this.props.message}</Alert>
+                <Alert variant='dark'>{this.props.message}</Alert>
             </div>
         );
     }

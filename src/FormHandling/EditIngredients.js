@@ -41,7 +41,7 @@ const EditIngredients = (props) => {
     const ingredientRows =
         ingredients.map((ingredient, index) =>
 
-            
+
             <tr id={ingredient.id}><td>
             <EditRecipeForm text={ingredient.name}
                             placeholder={ingredient.name}

@@ -62,16 +62,16 @@ class ImageUpload extends Component {
     render() {
         const ThumbImage = () =>(
             <div style={{paddingTop:20,paddingBottom:30}}>
-                <img style={{width:'70px'}} src={this.state.url} alt="recipeImage"/>
+                <img style={{width:'100px'}} src={this.state.url} alt="recipeImage"/>
                 <br/>
             </div>
         )
         return (
             <div>
                 {this.state.success ? <ThumbImage/> : null}
-                <input onChange={this.handleChange} ref={(ref) => { this.uploadInput = ref; }} type="file"/>
+                <input className={"button-variant:dark"} onChange={this.handleChange} ref={(ref) => { this.uploadInput = ref; }} type="file"/>
                 <br/>
-                <Button style={{marginTop: 15,marginBottom:15}} onClick={this.handleUpload}>Lataa</Button>
+                <Button variant="dark" style={{marginTop: 15,marginBottom:15}} onClick={this.handleUpload}>Lataa</Button>
             </div>
         );
     }

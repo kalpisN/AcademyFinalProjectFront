@@ -16,7 +16,7 @@ function App() {
     return (
         <div className="background-of-everything">
             <Welcome/>
-            <Router>
+            <Router className="router">
                 <div>
                     <Navibar/>
                     <Switch>

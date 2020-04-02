@@ -111,7 +111,7 @@ class NewIngredient extends Component {
                 </Form>
                 <Form.Group as={Row}>
                     <Col sm={{ span: 10, offset: 2 }}>
-                        <Button type="text" onClick={this.emptyForm}>Tyhjennä kentät</Button>
+                        <Button variant="dark" type="text" onClick={this.emptyForm}>Tyhjennä kentät</Button>
                     </Col>
                 </Form.Group>
                 {!this.state.isHidden && <Message message={this.state.message}/>}

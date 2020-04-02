@@ -80,7 +80,7 @@ d
                 centered
             >
                 <Modal.Header closeButton>
-                    <Modal.Title id="contained-modal-title-vcenter">
+                    <Modal.Title className="modal-title" id="contained-modal-title-vcenter">
                         {this.props.name}
                     </Modal.Title>
                 </Modal.Header>
@@ -92,8 +92,8 @@ d
                 </Modal.Body>
                 <Modal.Footer>
                     {!this.state.isHidden && <Message message={this.state.message}/>}
-                    <Button variant="light" onClick={this.saveItems}><AddShoppingCartIcon/></Button>
-                    <Button onClick={this.props.onHide}>Close</Button>
+                    <Button variant="dark" onClick={this.saveItems}><AddShoppingCartIcon/></Button>
+                    <Button variant="dark" onClick={this.props.onHide}>Close</Button>
                 </Modal.Footer>
             </Modal>
         );
