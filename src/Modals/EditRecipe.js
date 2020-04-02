@@ -166,7 +166,6 @@ function EditRecipe(props) {
                 <Modal.Footer>
                     <Button variant="dark" onClick={handleSubmit}>Tallenna</Button>
                     <Button variant="dark" onClick={() => setDeleteModalShow(true)}><DeleteForeverIcon/></Button>
-                    <Button variant="dark" onClick={props.onHide}>Close</Button>
                 </Modal.Footer>
             <DeleteRecipe
                 id={props.id}
