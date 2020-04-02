@@ -12,7 +12,8 @@ import Table from "react-bootstrap/Table";
 import {API_BASE_URL} from "../Helpers/API";
 import EditIngredients from "../FormHandling/EditIngredients";
 import Message from "../Helpers/Message";
-import "./ImageUpload"
+import "./ImageUploadFunction"
+import ImageUploadFunction from "./ImageUploadFunction";
 
 function EditRecipe(props) {
 
@@ -26,6 +27,7 @@ function EditRecipe(props) {
     const [portions, setPortions] = React.useState(props.portions);
     const [instruction, setInstruction] = React.useState(props.instruction);
     const [reload, setReload] = React.useState(false);
+    const [image,setImage] = React.useState(props.image)
 
     const handleSubmit = () => {
 
@@ -38,9 +40,9 @@ function EditRecipe(props) {
             name: name,
             cooking_time: parseInt(cooking_time),
             portions: parseInt(portions),
-            instruction: instruction
-            /*            image: image,
-                        ingredients: ingredients*/
+            instruction: instruction,
+            image: image
+                        /*ingredients: ingredients*/
         });
         console.log(data);
         const decoder = new TextDecoder('utf-8');
@@ -151,8 +153,8 @@ function EditRecipe(props) {
                                 />
                                 </EditRecipeForm></Col>
                         </Col>
-                            <Col md="auto"><Image src={props.image} width={250}/></Col>
-                            <EditIngredients reload={reload} setReload={setReload} name={props.name}/>
+                        <ImageUploadFunction image={image} setImage={setImage}/>
+                        <EditIngredients reload={reload} setReload={setReload} name={props.name}/>
                     </Grid>
                 </Modal.Body>
                 <Modal.Footer>
