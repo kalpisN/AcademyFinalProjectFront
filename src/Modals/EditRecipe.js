@@ -104,7 +104,7 @@ function EditRecipe(props) {
                             <tr><td><b>Valmistusaika:</b></td><td> <EditRecipeForm
                                 text={cooking_time}
                                 placeholder={props.cooking_time}
-                                childRef={cooking_timeRef}
+                                childRef={null}
                                 type="input"
                                 name="valmistusaika"
                             >

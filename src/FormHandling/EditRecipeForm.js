@@ -10,8 +10,8 @@ const EditRecipeForm = ({   childRef,
 
     const [isEditing, setEditing] = useState(false);
 
-
     useEffect(() => {
+
         if (childRef && childRef.current && isEditing === true) {
             childRef.current.focus();
         }
