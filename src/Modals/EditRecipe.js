@@ -14,6 +14,7 @@ import EditIngredients from "../FormHandling/EditIngredients";
 import Message from "../Helpers/Message";
 
 
+
 function EditRecipe(props) {
 
     const [deleteModalShow, setDeleteModalShow] = React.useState(false);
@@ -171,6 +172,7 @@ function EditRecipe(props) {
                 show={deleteModalShow}
                 onHide={() => setDeleteModalShow(false)}
             />
+
         </Modal>
     );
 }
