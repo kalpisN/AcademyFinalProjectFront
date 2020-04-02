@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import NewRecipe from "../FormHandling/NewRecipe";
-import NewIngredient from "../FormHandling/NewIngredient";
 
 class NewRecipeAndIngredient extends Component {
     render() {

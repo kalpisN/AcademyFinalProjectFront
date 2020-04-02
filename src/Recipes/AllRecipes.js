@@ -25,6 +25,7 @@ function AllRecipes(props) {
         columnWidth={250}
         gutterWidth={20}
         gutterHeight={15}
+        monitorImagesLoaded={true}
     >
         {rows}
     </StackGrid>

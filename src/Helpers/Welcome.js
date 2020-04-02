@@ -4,7 +4,7 @@ class Welcome extends Component {
     render() {
         return (
             <div className="Welcome">
-                <h1>Reseptivihko 2.0</h1>
+                <h1 className="Welcome-title">Reseptivihko 2.0</h1>
                 <p  className="welcome-subtext">Kaikki lempireseptit helposti yhdessä paikassa</p>
             </div>
         );

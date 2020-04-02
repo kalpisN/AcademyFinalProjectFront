@@ -3,6 +3,9 @@ import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import AllRecipes from "./AllRecipes";
 import {API_BASE_URL} from "../Helpers/API";
+import {Form} from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function Search() {
     const [recipes, setRecipes] = useState([])
@@ -34,10 +37,16 @@ function Search() {
             <div className={"Allrecipes"}>
                 <hr/>
                 <div className={'searchBar'}>
-                    <div className={'heading'}>
-                        <p>Hae reseptiä</p></div><input className='searchInput' placeholder='Kirjoita reseptin nimi...' value={filter} onChange={handlefilterChange}/>
-                </div>
-                <div><AllRecipes recipes={recipes} filter={filter} setFilter={setFilter}/></div>
+                    <Form.Group>
+                        <Row>
+                        <Form.Label column sm={3} className={"heading"} style={{fontSize:"xx-large"}}>Hae reseptiä</Form.Label>
+                        <Col sm={8}>
+                        <Form.Control className='searchInput' placeholder='Kirjoita reseptin nimi...' value={filter} onChange={handlefilterChange}/>
+                        </Col>
+                            </Row>
+                    </Form.Group>
+                    </div>
+                <AllRecipes recipes={recipes} filter={filter} setFilter={setFilter}/>
             </div>
         )
 
