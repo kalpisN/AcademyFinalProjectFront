@@ -142,8 +142,8 @@ class NewRecipe extends Component {
     render() {
         let {name, cooking_time, instruction, link, portions, image, ingredients} = this.state
         return (
-
-            <div className={"newRecipeForm"}>
+            <div className='flex-container-recipe'>
+            <div className="newRecipeForm">
                 <Form onSubmit={this.handleSubmit} onChange={this.handleChange}>
                     <Form.Group as={Row}>
 
@@ -228,7 +228,7 @@ class NewRecipe extends Component {
                                             </Form.Group>
                                             <Form.Group as={Row}>
                                                 <Form.Label column sm={2}>
-                                                    Yksikkö
+                                                    Yksikkö:
                                                 </Form.Label>
                                                 <Col sm={10}>
                                                     <Form.Control as="select"  name={ingredientunit} data-id={idx} id={ingredientunit} value={ingredients[idx].unit} bsPrefix="unit" onChange={this.handleChange}>
@@ -258,6 +258,8 @@ class NewRecipe extends Component {
                     </Col>
                 </Form.Group>
                 {!this.state.isHidden && <Message message={this.state.message}/>}
+            </div>
+
             </div>
         );
     }
