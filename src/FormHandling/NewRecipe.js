@@ -180,7 +180,7 @@ class NewRecipe extends Component {
                             <Form.Control as="textarea" name="instruction" id="instruction" value={instruction} onChange={this.handleChange}/>
                         </Col>
                     </Form.Group>
-                    <Form.Group as={Row}>
+                    <Form.Group as={Row} style={{display: "none"}}>
                         <Form.Label column sm={2}>
                             Linkki ohjeeseen:
                         </Form.Label>
@@ -199,7 +199,7 @@ class NewRecipe extends Component {
                     </Form.Group>
                     <Form.Group as={Row}>
                         <Col sm={{ span: 10, offset: 2 }}>
-                            <Button type="button" onClick={this.addIngredient}>Lisää uusi ainesosa reseptiin</Button>
+                            <Button variant="dark" type="button" onClick={this.addIngredient}>Lisää uusi ainesosa reseptiin</Button>
                         </Col>
                         {this.state.errormessageamount}
                     </Form.Group>
@@ -248,13 +248,13 @@ class NewRecipe extends Component {
 
                     <Form.Group as={Row}>
                         <Col sm={{ span: 10, offset: 2 }}>
-                            <Button type="submit">Tallenna resepti</Button>
+                            <Button variant="dark" type="submit">Tallenna resepti</Button>
                         </Col>
                     </Form.Group>
                 </Form>
                 <Form.Group as={Row}>
                     <Col sm={{ span: 10, offset: 2 }}>
-                        <Button type="text" onClick={this.emptyForm}>Tyhjennä kentät</Button>
+                        <Button variant="dark" type="text" onClick={this.emptyForm}>Tyhjennä kentät</Button>
                     </Col>
                 </Form.Group>
                 {!this.state.isHidden && <Message message={this.state.message}/>}

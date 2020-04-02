@@ -34,7 +34,7 @@ function Recipe(props) {
             <Card>
                 <Card.Img variant="top" src={props.image} width={160}/>
                 <Card.Body>
-                    <Card.Title>{props.name}</Card.Title>
+                    <Card.Title className="card-title">{props.name}</Card.Title>
                     <Card.Text>
                         <Row>Ruuanlaittoaika: {props.cooking_time}</Row>
                         <Row>Annokset: {props.portions}</Row>

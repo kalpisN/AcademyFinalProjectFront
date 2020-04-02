@@ -2,6 +2,7 @@ import React from "react";
 import {API_BASE_URL} from "../Helpers/API";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import Message from "../Helpers/Message";
 
 function DeleteRecipe(props) {
 
@@ -11,10 +12,18 @@ function DeleteRecipe(props) {
     if (RecipeDelete === true) {
         console.log('täällä sitä poistetaan reseptiä!')
         const url = API_BASE_URL + '/recipes/' + props.id;
-
+        const decoder = new TextDecoder('utf-8');
         fetch(url, {
             method: 'DELETE'
-        }).then(r => r.json());
+        })
+            .then(r =>
+            r.body
+                .getReader()
+                .read()
+                    .then(({value, done}) => {
+                        console.log(decoder.decode(value))
+                    })
+            )
 
 
         console.log(props.id + 'poistettu')
@@ -34,8 +43,8 @@ function DeleteRecipe(props) {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Button variant="light" onClick={() => setRecipeDelete(true)}>Kyllä</Button>
-                <Button variant="light" onClick={props.onHide}>Ei</Button>
+                <Button variant="dark" onClick={() => setRecipeDelete(true)}>Kyllä</Button>
+                <Button variant="dark" onClick={props.onHide}>Ei</Button>
             </Modal.Body>
             <Modal.Footer>
             </Modal.Footer>
