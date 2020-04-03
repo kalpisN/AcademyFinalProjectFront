@@ -11,8 +11,10 @@ function DeleteRecipe(props) {
 
     if (RecipeDelete === true) {
         console.log('täällä sitä poistetaan reseptiä!')
+
         const url = API_BASE_URL + '/recipes/' + props.id;
         const decoder = new TextDecoder('utf-8');
+
         fetch(url, {
             method: 'DELETE'
         })

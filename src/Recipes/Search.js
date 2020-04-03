@@ -1,4 +1,4 @@
-
+import "./Search.css"
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import AllRecipes from "./AllRecipes";
@@ -37,10 +37,10 @@ function Search() {
             <div className={"Allrecipes"}>
                 <hr/>
                 <div className={'searchBar'}>
+                    <p className='heading'>Hae reseptiä</p>
                     <Form.Group>
                         <Row>
-                        <Form.Label column sm={3} className={"heading"} style={{fontSize:"xx-large"}}>Hae reseptiä</Form.Label>
-                        <Col sm={8}>
+                        <Col sm={3}>
                         <Form.Control className='searchInput' placeholder='Kirjoita reseptin nimi...' value={filter} onChange={handlefilterChange}/>
                         </Col>
                             </Row>

@@ -61,6 +61,7 @@ const ShoppingList =()=> {
                 if (res.status === 200) {
                     const messageSuccess = 'Tuote lisätty kauppalistaan';
                     setMessage(messageSuccess);
+                    window.location.reload(false);
                 } else {
                     const messageError = 'HUPS! Jotain meni vikaan eikä tuotetta lisätty!';
                     setMessage(messageError);
@@ -82,13 +83,16 @@ const ShoppingList =()=> {
             .then(res => {
                 console.log(res);
                 console.log(res.data);
-                //ei toiminut tämä yritelmä
-                // const copy = [...setShoppingListItems]
-                // const index = copy.indexOf(props)
-                // if (index !== -1) {
-                //     copy.splice(index, 1);
-                //     setShoppingListItems(copy)
-                // }
+                window.location.reload(false);
+            })
+    }
+
+    const deleteShoppingList = ()=>{
+        axios.delete(`${API_BASE_URL}/shoppingList`)
+            .then(res => {
+                console.log(res);
+                console.log(res.data);
+                window.location.reload(false);
             })
     }
 
@@ -132,7 +136,7 @@ const ShoppingList =()=> {
                                 Määrä:
                             </Form.Label>
                             <Col sm={10}>
-                                <Form.Control type="text" name="amount" value={amount} onChange={handleAmountChange}/>
+                                <Form.Control type="number" name="amount" value={amount} onChange={handleAmountChange}/>
                             </Col>
                         </Form.Group>
                         <Form.Group as={Row}>
@@ -146,6 +150,11 @@ const ShoppingList =()=> {
                         <Form.Group as={Row}>
                             <Col sm={{span: 10, offset: 2}}>
                                 <Button variant="dark" type="submit">Lisää kauppalistaan</Button>
+                            </Col>
+                        </Form.Group>
+                        <Form.Group as={Row}>
+                            <Col sm={{span: 10, offset: 2}}>
+                                <Button variant="dark" onClick={deleteShoppingList}>Tyhjennä kauppalista</Button>
                             </Col>
                         </Form.Group>
                     </Form>

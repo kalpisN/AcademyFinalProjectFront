@@ -1,0 +1,17 @@
+.searchInput{
+    border-radius: 3px;
+    border-style: solid;
+    border-width: thin;
+    padding: 3px;
+    border-color: gray;
+    min-width: 247px;
+    max-width: 247px;
+}
+.searchBar{
+    margin-left: 94px;
+    margin-bottom: 30px;
+}
+
+.heading{
+    margin-left: 10px;
+}
