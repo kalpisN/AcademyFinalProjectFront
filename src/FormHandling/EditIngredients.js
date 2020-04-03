@@ -2,7 +2,7 @@ import {API_BASE_URL} from "../Helpers/API";
 import React, {createRef, useEffect, useRef, useState} from "react";
 import axios from "axios";
 import AddIcon from '@material-ui/icons/Add';
-import ClearIcon from '@material-ui/icons/Clear';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import DeleteIngredient from "../Modals/DeleteIngredient";
@@ -16,21 +16,25 @@ const EditIngredients = (props) => {
     const amountRef = useRef();
     const [unit, setUnit] = React.useState('');
     const unitRef = useRef();
+    const [reload, setReload] = React.useState(true)
 
 
     const url = API_BASE_URL + '/ingredientsByRecipe/' + props.name;
     const [ingredients, setIngredients] = useState([]);
 
+        if (reload === true) {
 
-        useEffect(() => {
             console.log('effect')
             axios
                 .get(url)
                 .then(response => {
                     console.log('promise fulfilled')
                     setIngredients(response.data);
-                })
-        }, []);
+                });
+
+            setReload(false)
+        }
+
 
     const handleSubmit = () => {
     const data = {
@@ -46,16 +50,13 @@ const EditIngredients = (props) => {
                     console.log(res.status);
                     if (res.status === 200) {
                         console.log('Ainesosa lisätty onnistuneesti');
-                        props.setReload(true);
+                        setReload(true);
+                        
                     }
-                })
-                .catch(err => {
-                    console.log('HUPS! Jotain meni vikaan eikä ainesosaa lisätty!');
-
+                    else {
+                        console.log('HUPS! Jotain meni vikaan eikä ainesosaa lisätty!');
+                    }
                 });
-
-                props.setReload(false);
-
         }
 
         const ingredientRows =
@@ -64,66 +65,20 @@ const EditIngredients = (props) => {
                 <tr id={ingredient.id}>
                     <td>
                         {ingredient.name}
-                        {/*<EditRecipeForm text={ingredient.name}
-                                        placeholder={ingredient.name}
-                                        childRef={ref}
-                                        type="input"
-                                        name="ainesosa"
-                                        index={index}
-                        >
-                            <input
-                                ref={ref}
-                                type="text"
-                                name={iName}
-                                placeholder={ingredient.name}
-                                value={iName}
-                                id={ingredient.id}
-                                onChange={e => setIname(e.target.value)}
-                            />
-                        </EditRecipeForm>*/}
                     </td>
                     <td>
                         {ingredient.amount}
-                       {/* <EditRecipeForm text={ingredient.amount}
-                                        placeholder={ingredient.amount}
-                                        childRef={null}
-                                        type="input"
-                                        name="määrä"
-                                        index={index}
-                        >
-                            <input
-                                ref={ref}
-                                type="text"
-                                name={amount}
-                                placeholder={ingredient.amount}
-                                value={amount}
-                                onChange={e => setAmount(e.target.value)}
-                            />
-                        </EditRecipeForm>*/}
                     </td>
-                    <td>{ingredient.unit}
-                       {/* <EditRecipeForm text={ingredient.unit}
-                                        placeholder={ingredient.unit}
-                                        childRef={null}
-                                        type="input"
-                                        name="yksikkö"
-                        >
-                            <input
-                                ref={ref}
-                                type="text"
-                                name={unit}
-                                placeholder={ingredient.unit}
-                                value={unit}
-                                onChange={e => setUnit(e.target.value)}
-                            />
-                        </EditRecipeForm>*/}
+                    <td>
+                        {ingredient.unit}
                     </td>
-                    <td><Button id={ingredient.id} variant="light" onClick={() => setDeleteModalShow(true)}><ClearIcon/></Button>
+                    <td><Button id={ingredient.id} variant="transparent" onClick={() => setDeleteModalShow(true)}><DeleteForeverIcon/></Button>
                     </td>
                     <DeleteIngredient
                         id={ingredient.id}
                         show={deleteModalShow}
                         onHide={() => setDeleteModalShow(false)}
+
                     />
                 </tr>
             );
@@ -164,7 +119,7 @@ const EditIngredients = (props) => {
                                 <option value="ripaus">ripaus</option>
                             </select>
                         </td>
-                    <td><Button variant="light" onClick={handleSubmit}><AddIcon/></Button></td>
+                    <td><Button variant="transparent" onClick={handleSubmit}><AddIcon/></Button></td>
                 </tr>
             </Table>
         )

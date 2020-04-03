@@ -5,15 +5,14 @@ import Modal from "react-bootstrap/Modal";
 import DeleteRecipe from "./DeleteRecipe";
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
 import Grid from "@material-ui/core/Grid";
 import EditRecipeForm from "../FormHandling/EditRecipeForm";
 import Table from "react-bootstrap/Table";
 import {API_BASE_URL} from "../Helpers/API";
 import EditIngredients from "../FormHandling/EditIngredients";
-import Message from "../Helpers/Message";
 import "./ImageUploadFunction"
 import ImageUploadFunction from "./ImageUploadFunction";
+import SaveIcon from '@material-ui/icons/Save';
 
 function EditRecipe(props) {
 
@@ -27,14 +26,14 @@ function EditRecipe(props) {
     const [portions, setPortions] = React.useState(props.portions);
     const [instruction, setInstruction] = React.useState(props.instruction);
     const [reload, setReload] = React.useState(false);
+    const [message, setMessage] = useState("")
     const [image,setImage] = React.useState(props.image)
+    const [deleted, setDeleted] = React.useState(false)
+
 
     const handleSubmit = () => {
 
-        console.log('Submitting stuff!');
-        console.log(name);
         const url = API_BASE_URL + '/recipes/' + props.id;
-
 
         let data = JSON.stringify( {
             name: name,
@@ -58,11 +57,15 @@ function EditRecipe(props) {
                     .read()
                     .then(({value, done}) => {
                         if (decoder.decode(value) === 'Recipe Updated!') {
-                            console.log(decoder.decode(value));
-                           /* return (<Message message="Resepti tallennettu onnistuneesti!"/>)*/
+                            setMessage("Resepti päivitetty onnistuneesti!")
                         }
+                        else {
+                            setMessage("HUPS! Jotain meni vikaan eikä reseptin päivittäminen onnistunut!")
+                        }
+
                     })
             })
+
     };
 
     return (
@@ -154,19 +157,19 @@ function EditRecipe(props) {
                                 </EditRecipeForm></Col>
                         </Col>
                         <ImageUploadFunction image={image} setImage={setImage}/>
-                        <EditIngredients reload={reload} setReload={setReload} name={props.name}/>
+                        <EditIngredients name={props.name}/>
                     </Grid>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="dark" onClick={handleSubmit}>Tallenna</Button>
                     <Button variant="dark" onClick={() => setDeleteModalShow(true)}><DeleteForeverIcon/></Button>
+                    <Button variant="dark" onClick={handleSubmit}><SaveIcon/></Button>
                 </Modal.Footer>
             <DeleteRecipe
                 id={props.id}
                 show={deleteModalShow}
                 onHide={() => setDeleteModalShow(false)}
             />
-
+            {message}
         </Modal>
     );
 }

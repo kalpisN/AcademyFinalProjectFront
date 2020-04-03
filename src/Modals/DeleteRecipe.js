@@ -2,16 +2,15 @@ import React from "react";
 import {API_BASE_URL} from "../Helpers/API";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import Message from "../Helpers/Message";
 
 function DeleteRecipe(props) {
 
     const [RecipeDelete, setRecipeDelete] = React.useState(false);
+    const [message, setMessage] = React.useState("")
 
 
     if (RecipeDelete === true) {
-        console.log('täällä sitä poistetaan reseptiä!')
-
+        console.log('täällä sitä poistetaan reseptiä!');
         const url = API_BASE_URL + '/recipes/' + props.id;
         const decoder = new TextDecoder('utf-8');
 
@@ -23,17 +22,17 @@ function DeleteRecipe(props) {
                 .getReader()
                 .read()
                     .then(({value, done}) => {
-                        console.log(decoder.decode(value))
+                        if (decoder.decode(value) === 'Recipe Deleted!') {
+                            window.location.reload(true);
+
+                        }
+                        else {
+                            setMessage("HUPS! Jokin meni vikaan!");
+                        }
                     })
             )
 
-
-
-        console.log(props.id + 'poistettu')
-
     }
-
-
 
     return(
         <Modal
@@ -52,6 +51,7 @@ function DeleteRecipe(props) {
                 <Button variant="dark" onClick={props.onHide}>Ei</Button>
             </Modal.Body>
             <Modal.Footer>
+                {message}
             </Modal.Footer>
         </Modal>
 
