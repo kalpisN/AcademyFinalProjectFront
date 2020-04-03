@@ -114,7 +114,7 @@ d
                 </Modal.Body>
                 <Modal.Footer>
                     {!this.state.isHidden && <Message message={this.state.message}/>}
-                    <Button variant="transparent" onClick={this.saveItems}><PlaylistAddOutlinedIcon/></Button>
+                    <Button variant="dark" onClick={this.saveItems}><PlaylistAddOutlinedIcon/></Button>
                     <Button variant="dark" onClick={this.props.onHide}>Close</Button>
                 </Modal.Footer>
             </Modal>

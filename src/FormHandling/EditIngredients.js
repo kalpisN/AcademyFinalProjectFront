@@ -2,7 +2,7 @@ import {API_BASE_URL} from "../Helpers/API";
 import React, {createRef, useEffect, useRef, useState} from "react";
 import axios from "axios";
 import AddIcon from '@material-ui/icons/Add';
-import ClearIcon from '@material-ui/icons/Clear';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import DeleteIngredient from "../Modals/DeleteIngredient";
@@ -72,7 +72,7 @@ const EditIngredients = (props) => {
                     <td>
                         {ingredient.unit}
                     </td>
-                    <td><Button id={ingredient.id} variant="transparent" onClick={() => setDeleteModalShow(true)}><ClearIcon/></Button>
+                    <td><Button id={ingredient.id} variant="transparent" onClick={() => setDeleteModalShow(true)}><DeleteForeverIcon/></Button>
                     </td>
                     <DeleteIngredient
                         id={ingredient.id}
