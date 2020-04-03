@@ -12,6 +12,7 @@ import {API_BASE_URL} from "../Helpers/API";
 import EditIngredients from "../FormHandling/EditIngredients";
 import "./ImageUploadFunction"
 import ImageUploadFunction from "./ImageUploadFunction";
+import SaveIcon from '@material-ui/icons/Save';
 
 function EditRecipe(props) {
 
@@ -27,6 +28,7 @@ function EditRecipe(props) {
     const [reload, setReload] = React.useState(false);
     const [message, setMessage] = useState("")
     const [image,setImage] = React.useState(props.image)
+    const [deleted, setDeleted] = React.useState(false)
 
 
     const handleSubmit = () => {
@@ -56,7 +58,6 @@ function EditRecipe(props) {
                     .then(({value, done}) => {
                         if (decoder.decode(value) === 'Recipe Updated!') {
                             setMessage("Resepti päivitetty onnistuneesti!")
-                           /* return (<Message message="Resepti tallennettu onnistuneesti!"/>)*/
                         }
                         else {
                             setMessage("HUPS! Jotain meni vikaan eikä reseptin päivittäminen onnistunut!")
@@ -64,6 +65,7 @@ function EditRecipe(props) {
 
                     })
             })
+
     };
 
     return (
@@ -155,12 +157,12 @@ function EditRecipe(props) {
                                 </EditRecipeForm></Col>
                         </Col>
                         <ImageUploadFunction image={image} setImage={setImage}/>
-                        <EditIngredients reload={reload} setReload={setReload} name={props.name}/>
+                        <EditIngredients name={props.name}/>
                     </Grid>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="dark" onClick={handleSubmit}>Tallenna</Button>
-                    <Button variant="dark" onClick={() => setDeleteModalShow(true)}><DeleteForeverIcon/></Button>
+                    <Button variant="transparent" onClick={() => setDeleteModalShow(true)}><DeleteForeverIcon/></Button>
+                    <Button variant="transparent" onClick={handleSubmit}><SaveIcon/></Button>
                 </Modal.Footer>
             <DeleteRecipe
                 id={props.id}
