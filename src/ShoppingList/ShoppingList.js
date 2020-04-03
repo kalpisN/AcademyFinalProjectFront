@@ -1,15 +1,11 @@
-import React, {Component, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {API_BASE_URL} from "../Helpers/API";
-import {Spinner} from "react-bootstrap";
 import axios from "axios";
 import {Row} from "react-bootstrap";
 import {Table} from "react-bootstrap";
-import {Checkbox} from "@material-ui/core";
-import update from 'immutability-helper';
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import Button from "react-bootstrap/Button";
 import "./ShoppingList.css"
-import trashIcon from "./trash-solid.svg"
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 
@@ -102,7 +98,7 @@ const ShoppingList =()=> {
             <td>{item.name}</td>
             <td>{item.amount}</td>
             <td>{item.unit}</td>
-            <td><Button variant="light" onClick={()=>deleteItem(item)}><img className='trashIcon' src={trashIcon}/></Button></td>
+            <td><Button variant="transparent" onClick={()=>deleteItem(item)}><DeleteForeverIcon/></Button></td>
         </tr>
     )
 

@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fd2bcbe-4c8c-45ae-9e22-c5ac9d9dca4d" name="Default Changelist" comment="">
+
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FormHandling/EditIngredients.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormHandling/EditIngredients.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modals/DeleteIngredient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/DeleteIngredient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modals/DeleteRecipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/DeleteRecipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modals/EditRecipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/EditRecipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modals/ShowRecipeDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/ShowRecipeDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Recipes/Recipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipes/Recipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShoppingList/ShoppingList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoppingList/ShoppingList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShoppingList/ShoppingList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoppingList/ShoppingList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShoppingList/trash-alt-solid.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShoppingList/trash-solid.svg" beforeDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/FormHandling/NewRecipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormHandling/NewRecipe.js" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +143,12 @@
       <workItem from="1585729757367" duration="2473000" />
       <workItem from="1585731662391" duration="593000" />
       <workItem from="1585820376587" duration="4190000" />
+
+      <workItem from="1585848050633" duration="6969000" />
+      <workItem from="1585893745065" duration="6756000" />
+
       <workItem from="1585890592181" duration="8875000" />
+
     </task>
     <servers />
   </component>

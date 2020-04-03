@@ -2,26 +2,37 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import {API_BASE_URL} from "../Helpers/API";
-import DeleteRecipe from "./DeleteRecipe";
-
 
 function DeleteIngredient(props) {
 
     const [ingredientDelete, setIngredientDelete] = React.useState(false);
+    const [message, setMessage] = React.useState("");
+    const [deleted, setDeleted] = React.useState(false);
 
 
     if(ingredientDelete === true) {
 
         const url = API_BASE_URL + '/ingredients/' + props.id;
+        const decoder = new TextDecoder('utf-8');
 
         fetch(url, {
             method: 'DELETE'
-        }).then(r => r.json());
-
-        console.log(props.name + ' poistettu')
-
+        }).then(r => r.body
+            .getReader()
+            .read()
+            .then(({value, done}) => {
+                if (decoder.decode(value) === 'Ingredient Deleted!') {
+                    setMessage("Ainesosa poistettu onnistuneesti!");
+                    setDeleted(true);
+                }
+                else {
+                    setMessage("HUPS! Jokin meni vikaan!");
+                }
+            })
+        )
+        if (deleted === true);
+            return(props.onHide);
     }
-
 
     return(
         <Modal
@@ -41,9 +52,8 @@ function DeleteIngredient(props) {
             </Modal.Body>
             <Modal.Footer>
             </Modal.Footer>
+            {message}
         </Modal>
-
-
     )
 }
 
