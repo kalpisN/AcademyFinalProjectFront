@@ -22,7 +22,6 @@ class NewRecipe extends Component {
             errormessageamount: '',
             message: '',
             isHidden:true,
-            validated:false,
             ingredients: [{iname: '', amount: '', unit: ''}]};
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -89,15 +88,6 @@ class NewRecipe extends Component {
             ingredients: this.state.ingredients
         })
         console.log(data)
-        const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-            event.preventDefault();
-            console.log("lopeta eteneminen NYT")
-            event.stopPropagation();
-
-        }
-        this.setState({validated: true})
-
         axios.post(url, data)
             .then(res => {
                 console.log(res);
@@ -159,13 +149,13 @@ class NewRecipe extends Component {
         return (
 
             <div className="newRecipeForm">
-                <Form onSubmit={this.handleSubmit} onChange={this.handleChange} noValidate validated={this.state.validated}>
+                <Form onSubmit={this.handleSubmit} onChange={this.handleChange}>
                     <Form.Group as={Row} >
                         <Form.Label column sm={2}><b>
                             Ruokalaji:*
                         </b></Form.Label>
                         <Col sm={10}>
-                            <Form.Control type="text" name ="name" id= "name" value={name} required onChange={this.handleChange}/>
+                            <Form.Control type="text" name ="name" id= "name" value={name}  onChange={this.handleChange}/>
                             <Form.Control.Feedback type="invalid">
                                Ruokalajin nimikenttä ei voi olla tyhjä!
                             </Form.Control.Feedback>
@@ -176,7 +166,7 @@ class NewRecipe extends Component {
                             Kokkausaika(min):*
                         </b></Form.Label>
                         <Col sm={10}>
-                            <Form.Control type="text" name="cooking_time" id="cooking_time" value={cooking_time} required onChange={this.handleChange}/>
+                            <Form.Control type="text" name="cooking_time" id="cooking_time" value={cooking_time}  onChange={this.handleChange}/>
                             <Form.Control.Feedback type="invalid">
                                 Kokkausaikakenttä ei voi olla tyhjä!
                             </Form.Control.Feedback>
@@ -188,7 +178,7 @@ class NewRecipe extends Component {
                         Annoskoko:*
                     </b></Form.Label>
                     <Col sm={10}>
-                        <Form.Control type="text" name="portions" id="portions" value={portions} required onChange={this.handleChange}/>
+                        <Form.Control type="text" name="portions" id="portions" value={portions}  onChange={this.handleChange}/>
                         <Form.Control.Feedback type="invalid">
                             Annoskokokenttä ei voi olla tyhjä!
                         </Form.Control.Feedback>
@@ -237,7 +227,7 @@ class NewRecipe extends Component {
                                                     Ainesosa:*
                                                 </b></Form.Label>
                                             <Col sm={10}>
-                                                <Form.Control type="text" name={iname} data-id={idx} id={iname} value={ingredients[idx].iname} bsPrefix="iname" required onChange={this.handleChange}/>
+                                                <Form.Control type="text" name={iname} data-id={idx} id={iname} value={ingredients[idx].iname} bsPrefix="iname"  onChange={this.handleChange}/>
                                                 <Form.Control.Feedback type="invalid">
                                                     Ainesosakenttä ei voi olla tyhjä!
                                                 </Form.Control.Feedback>
@@ -248,7 +238,7 @@ class NewRecipe extends Component {
                                                     Määrä:*
                                                 </b></Form.Label>
                                                 <Col sm={10}>
-                                                    <Form.Control type="text" name={ingredientamount} data-id={idx} id={ingredientamount} value={ingredients[idx].amount} bsPrefix="amount" required onChange={this.handleChange}/>
+                                                    <Form.Control type="text" name={ingredientamount} data-id={idx} id={ingredientamount} value={ingredients[idx].amount} bsPrefix="amount"  onChange={this.handleChange}/>
                                                     <Form.Control.Feedback type="invalid">
                                                         Määräkenttä ei voi olla tyhjä!
                                                     </Form.Control.Feedback>
@@ -259,7 +249,7 @@ class NewRecipe extends Component {
                                                     Yksikkö:*
                                                 </b></Form.Label>
                                                 <Col sm={10}>
-                                                    <Form.Control as="select"  name={ingredientunit} data-id={idx} id={ingredientunit} value={ingredients[idx].unit} bsPrefix="unit" required onChange={this.handleChange}>
+                                                    <Form.Control as="select"  name={ingredientunit} data-id={idx} id={ingredientunit} value={ingredients[idx].unit} bsPrefix="unit"  onChange={this.handleChange}>
                                                         <Form.Control.Feedback type="invalid">
                                                             Anna yksikkö!
                                                         </Form.Control.Feedback>
