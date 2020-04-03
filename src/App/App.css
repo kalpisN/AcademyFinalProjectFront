@@ -17,6 +17,10 @@
   font-size: 500%;
 }
 
+root {
+  background-color: white;
+}
+
 hr {
   border: none;
   height: 10px;
