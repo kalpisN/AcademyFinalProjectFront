@@ -31,6 +31,7 @@ function DeleteRecipe(props) {
                         }
                     })
             )
+
     }
 
     return(
