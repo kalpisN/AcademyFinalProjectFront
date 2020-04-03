@@ -53,6 +53,15 @@ hr {
 
 .shoppinglist-heading{
   font-family: 'Knewave', cursive;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 94px;
+}
+
+.shoppinglist-subtext{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 94px;
 }
 
 .hide-this {
@@ -109,7 +118,11 @@ hr {
 }
 
 .newRecipeForm{
-  margin-left: 50px;
+  margin-left: 94px;
+  padding: 0 40px;
+  justify-content: center;
+  margin-bottom: 100px;
+
 }
 
 .newIngredientForm {
