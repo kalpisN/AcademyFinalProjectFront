@@ -77,7 +77,6 @@ class NewRecipe extends Component {
 
     async handleSubmit(event) {
         let message = 'Tämä on defaultviesti';
-
         event.preventDefault();
         const url = API_BASE_URL + '/recipes'
         const data = JSON.stringify({
@@ -95,9 +94,10 @@ class NewRecipe extends Component {
             event.preventDefault();
             console.log("lopeta eteneminen NYT")
             event.stopPropagation();
-           
+
         }
         this.setState({validated: true})
+
         axios.post(url, data)
             .then(res => {
                 console.log(res);
