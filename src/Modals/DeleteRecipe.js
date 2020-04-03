@@ -26,8 +26,11 @@ function DeleteRecipe(props) {
             )
 
 
+
         console.log(props.id + 'poistettu')
+
     }
+
 
 
     return(
