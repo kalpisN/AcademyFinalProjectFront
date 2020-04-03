@@ -227,7 +227,7 @@ class NewRecipe extends Component {
                                                     Ainesosa:*
                                                 </b></Form.Label>
                                             <Col sm={10}>
-                                                <Form.Control type="text" name={iname} data-id={idx} id={iname} value={ingredients[idx].iname} bsPrefix="iname" required onChange={this.handleChange}/>
+                                                <Form.Control type="text" name={iname} data-id={idx} id={iname} value={ingredients[idx].iname} bsPrefix="iname"  onChange={this.handleChange}/>
                                                 <Form.Control.Feedback type="invalid">
                                                     Ainesosakenttä ei voi olla tyhjä!
                                                 </Form.Control.Feedback>
@@ -238,7 +238,7 @@ class NewRecipe extends Component {
                                                     Määrä:*
                                                 </b></Form.Label>
                                                 <Col sm={10}>
-                                                    <Form.Control type="text" name={ingredientamount} data-id={idx} id={ingredientamount} value={ingredients[idx].amount} bsPrefix="amount" required onChange={this.handleChange}/>
+                                                    <Form.Control type="text" name={ingredientamount} data-id={idx} id={ingredientamount} value={ingredients[idx].amount} bsPrefix="amount"  onChange={this.handleChange}/>
                                                     <Form.Control.Feedback type="invalid">
                                                         Määräkenttä ei voi olla tyhjä!
                                                     </Form.Control.Feedback>
@@ -249,7 +249,7 @@ class NewRecipe extends Component {
                                                     Yksikkö:*
                                                 </b></Form.Label>
                                                 <Col sm={10}>
-                                                    <Form.Control as="select"  name={ingredientunit} data-id={idx} id={ingredientunit} value={ingredients[idx].unit} bsPrefix="unit" required onChange={this.handleChange}>
+                                                    <Form.Control as="select"  name={ingredientunit} data-id={idx} id={ingredientunit} value={ingredients[idx].unit} bsPrefix="unit"  onChange={this.handleChange}>
                                                         <Form.Control.Feedback type="invalid">
                                                             Anna yksikkö!
                                                         </Form.Control.Feedback>
